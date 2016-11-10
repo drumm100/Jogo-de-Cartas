@@ -17,7 +17,7 @@ public class Combat{
 		    	 c1.type()==Type.REALITY && c2.type()==Type.SOUL )
 		   		bonus = 0.75;
 
-		c2.setHP( (int)( c2.getHP()-( c1.getAtk()*bonus / c2.getDef()/2 ) ));
+		c2.setHP( (int)( c2.getHP()-( c1.getAtk()*bonus - c2.getDef()/4 ) ));
 	}	
 	
 }
