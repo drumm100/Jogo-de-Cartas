@@ -1,13 +1,13 @@
-public class Space extends Carta{
-	private poderCarta Poder;
-	private int Forca; 
-	private int Vida;
-	private int Defesa;
+public class Soul extends Card{
+	private Type type;
+	private int atk; 
+	private int HP;
+	private int def;
 	
-	public Space(int Forca, int Vida, int Defesa){
-		super(Forca, Vida, Defesa);
-		this.Poder = poderCarta.Soul;
+	public Soul(int atk, int HP, int def){
+		super(atk, HP, def);
+		this.type = Type.SOUL;
 	}
 	@Override
-	public poderCarta Poder(){ return this.Poder; }
+	public Type type(){ return this.type; }
 }
