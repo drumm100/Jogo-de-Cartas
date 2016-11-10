@@ -10,11 +10,13 @@ public abstract class Carta{
 		this.Defesa = Defesa;
 	}
 	
-	public int defesa(){ return this.Defesa; }
+	public int getDefesa(){ return this.Defesa; }
 	
 	public int vida(){ return this.Vida; }
+	public void setVida(int Vida){ this.Vida = Vida; }
 	
 	public int forca(){ return this.Forca; }
+	
 	
 	public abstract int poder()
 }
