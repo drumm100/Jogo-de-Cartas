@@ -1,3 +1,3 @@
 public enum Type{
-       CHARACTER, SPELLS, HEROES, MONSTERS, SPELLS-ATK, SPELLs-DEF; 
+       HERO, MONSTER, SPELL; 
 } 

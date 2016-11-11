@@ -1,18 +1,24 @@
+import java.util.*;
 public class Hand{
 
-  private byte ncards;
-  private Arraylist<Card> cards;
+  private Deck deck;
+  private byte nCards;
+  private byte max;
+  private List<Card> cards;
  
   public Hand(Deck deck){
-	  ncards = 3;
-	  Deck c = deck.getInstance();
-	  cards.add(c.getCard());
-	  cards.add(c.getCard());
-	  cards.add(c.getCard());
+	  max = 3;
+	  deck = Deck.getInstance();
+	  pick();
+    pick();
+    pick();
+    nCards = 3;
   }
 
-  public getHand(){}
-
-  public setHand(){}
- 
+  //@requires nCards != max;
+  //@ensures nCards == \old nCards+1;
+  public void pick(){
+    //cards.add(deck.getRandom());
+    nCards += 1;
+  }
 }

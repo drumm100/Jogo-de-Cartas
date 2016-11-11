@@ -1,20 +1,18 @@
 public abstract class Card{
-	private Type type;
-	private int atk; 
-	private int HP;
-	private int def;
+	private String name;
+	private String description;
+	private int cost;
 	
-	public Card(int atk, int HP, int def){
-		this.atk = atk;
-		this.HP = HP;
-		this.def = def;
+	public Card(String name, String description,int cost){
+		this.name=name;
+		this.description=description;
+		this.cost = cost;
 	}
 	
-	public int getDef(){ return this.def; }
-	public int getHP(){ return this.HP; }
-	public int getAtk(){ return this.atk; }
+	public abstract int getHP();//pega o HP de monstros e herois
+	public abstract int getAtk();//pega o ataque de monstros e herois
+	public abstract void cast();//aplica a magia da carta (spells)
+	public int getCost(){return cost;}
 
-	public void setHP(int HP){ this.HP = HP; }
-
-	public abstract Type type();
+	public abstract void setHP(int HP);//define o HP (monstros e herois)
 }
