@@ -6,5 +6,5 @@ Vantagens das cartas:
 	hero > monster
 	monster > Spell
 
-	spells:
-	acho que a classe SpellCard devia receber uma outra classe spell como parametro, no caso essa classe implementaria um cast(), dai as cartas podem fazer uns feitiços dahoras tipo pegar a carta do oponente e tal
+classe player;
+toString card

@@ -1,3 +1,3 @@
 public class Spell{
-    public void cast(){ }
+    public void cast(Player player){}
 }

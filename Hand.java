@@ -2,13 +2,15 @@ import java.util.*;
 public class Hand{
 
   private Deck deck;
+  private Field field;
   private byte nCards;
   private byte max;
   private List<Card> cards;
  
-  public Hand(Deck deck){
+  public Hand(){
 	  max = 3;
-	  deck = deck;
+	  deck = new Deck();
+    field = new Field();
     cards = new ArrayList<Card>();
 	  cards.add(deck.getRandom());
     cards.add(deck.getRandom());
@@ -23,9 +25,9 @@ public class Hand{
     nCards += 1;
   }
 
-  public Card play(int card){
+  public void play(int card){
     card -= 1;
-    return cards.remove(card);
+    field.add( cards.remove(card) );
   }
 
   public byte nCards(){return nCards;}

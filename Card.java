@@ -12,6 +12,6 @@ public abstract class Card{
 
 	public abstract int getAtk();
 	public abstract int getHP();
-	public abstract void setHP(int HP);
-	public abstract void cast();
+	public abstract void hit(int HP);
+	public abstract void cast(Player player);
 }

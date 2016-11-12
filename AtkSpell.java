@@ -7,7 +7,7 @@ public class AtkSpell extends SpellCard{
 		this.spell = spell;
 	}
 
-	public void cast(){
-		spell.cast();
+	public void cast(Player player){
+		spell.cast(player);
 	}
 }
