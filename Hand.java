@@ -18,7 +18,7 @@ public class Hand{
   //@ requires nCards() != max();
   //@ ensures nCards() == \old( nCards()+1 );
   public void pick(){
-    //cards.add(deck.getRandom());
+    cards.add(deck.getRandom());
     nCards += 1;
   }
 
