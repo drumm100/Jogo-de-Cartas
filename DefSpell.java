@@ -6,7 +6,8 @@ public class DefSpell extends SpellCard{
 		super(name,description,cost);
 		this.spell = spell;
 	}
-
+	
+	@Override
 	public void cast(){
 		spell.cast();
 	}

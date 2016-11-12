@@ -15,4 +15,5 @@ public abstract class CharacterCard extends Card{
 	public int getAtk(){return atk;}
 	public int getHP(){return HP;}
 	public void setHP(int HP){this.HP = HP;}
+	public void cast(){}
 }

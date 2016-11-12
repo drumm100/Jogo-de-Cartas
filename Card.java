@@ -9,4 +9,9 @@ public abstract class Card{
 		this.cost = cost;
 	}
 	public int getCost(){return cost;}
+
+	public abstract int getAtk();
+	public abstract int getHP();
+	public abstract void setHP(int HP);
+	public abstract void cast();
 }

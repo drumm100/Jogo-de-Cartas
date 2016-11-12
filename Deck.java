@@ -2,12 +2,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck{
-
-  private static Deck deck = new Deck();
   private ArrayList<Card> cards;
   private Random random;
 
-  private Deck(){
+  public Deck(){
     cards = new ArrayList<Card>();
     random = new Random();
     cards.add( new Hero( "Daniel", "paladin", 2, 1, 2 ) ); // nome, descricao, custo, ataque, vida
@@ -20,7 +18,6 @@ public class Deck{
       }
     } ) );
   }
-  public static Deck getInstance(){return deck;}
 
   //@ ensures size() == \old(size() - 1); 
   public Card getRandom(){

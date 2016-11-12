@@ -8,10 +8,11 @@ public class Hand{
  
   public Hand(Deck deck){
 	  max = 3;
-	  deck = Deck.getInstance();
-	  pick();
-    pick();
-    pick();
+	  deck = deck;
+    cards = new ArrayList<Card>();
+	  cards.add(deck.getRandom());
+    cards.add(deck.getRandom());
+    cards.add(deck.getRandom());
     nCards = 3;
   }
 
@@ -20,6 +21,11 @@ public class Hand{
   public void pick(){
     cards.add(deck.getRandom());
     nCards += 1;
+  }
+
+  public Card play(int card){
+    card -= 1;
+    return cards.remove(card);
   }
 
   public byte nCards(){return nCards;}
