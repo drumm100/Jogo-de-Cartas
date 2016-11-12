@@ -16,7 +16,9 @@ public class Deck{
         System.out.println("dei 5 de dano no cara!");
         //player.setHP(player.getHP()-5);
       }
-    } ) );
+    } ) ); //isso aqui é uma carta de spell com um metodo cast q vai fazer basicamente qualquer coisa
+    
+
   }
 
   //@ ensures size() == \old(size() - 1); 
