@@ -15,10 +15,14 @@ public class Hand{
     nCards = 3;
   }
 
-  //@requires nCards != max;
-  //@ensures nCards == \old nCards+1;
+  //@ requires nCards() != max();
+  //@ ensures nCards() == \old( nCards()+1 );
   public void pick(){
     //cards.add(deck.getRandom());
     nCards += 1;
   }
+
+  public byte nCards(){return nCards;}
+  public byte max(){return max;}
+
 }
