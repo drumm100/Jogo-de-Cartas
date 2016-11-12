@@ -5,7 +5,7 @@ public abstract class SpellCard extends Card{
 
 	public abstract void cast();//aplica a magia da carta
 
-	public int getAtk(){return 1;}
+	public int getAtk(){return 1;} //isso aqui sepa ta chinelo
 	public int getHP(){return 1;}
 	public void setHP(int HP){}
 }
