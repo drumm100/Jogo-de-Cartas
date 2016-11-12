@@ -9,9 +9,13 @@ public class Deck{
     random = new Random();
   }
 
-  //@ ensures size() == \old(size() - 1); 
+  //@ size() != 0;
+  //@ ensures size() == \old(size() - 1);
   public Card getRandom(){
-    return cards.remove(random.nextInt(cards.size()));
+    int index = random.nextInt( cards.size()+1 );
+    if(index <= 0) index = 1;
+
+    return  cards.remove( index-1 );
   }
 
   public int size(){return cards.size();}

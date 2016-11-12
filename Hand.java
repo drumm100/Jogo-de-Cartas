@@ -33,4 +33,13 @@ public class Hand{
   public byte nCards(){return nCards;}
   public byte max(){return max;}
 
+  @Override
+  public String toString(){
+    String string = "";
+    for(Card card : cards){
+      string += card + " ";
+    }
+    return string;
+  }
+
 }

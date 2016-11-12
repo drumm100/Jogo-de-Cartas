@@ -1,7 +1,7 @@
 public abstract class Card{
-	private String name;
-	private String description;
-	private int cost;
+	protected String name;
+	protected String description;
+	protected int cost;
 	
 	public Card(String name, String description,int cost){
 		this.name=name;

@@ -16,4 +16,14 @@ public abstract class CharacterCard extends Card{
 	public int getHP(){return HP;}
 	public void hit(int HP){this.HP -= HP;}
 	public void cast(Player player){}
+
+	@Override
+	public String toString(){
+		return "--Personagem--\n" +
+			   name + "\n" + 
+			   description + "\n" + 
+			   "custo: " + cost + "\n" +
+			   "ataque: " + atk + "\n" +
+			   "vida: " + HP + "\n";
+	}
 }

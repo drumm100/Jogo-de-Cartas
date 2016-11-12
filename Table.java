@@ -1,12 +1,17 @@
 public class Table{
-    
+
+    private static Table instance = new Table();    
     private Player player1;
     private Player player2;
 
-    private Deck deck1;
-    private Deck deck2;
+    private Table(){
+        player1 = new Player("");
+        player2 = new Player("");
+    }
 
-    private Field field1;
-    private Field field2;
+    public static Table getInstance(){return instance;}
+
+    public Player player1(){return player1;}
+    public Player player2(){return player2;}
     
 }
