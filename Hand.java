@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class Hand{
 
   private Deck deck;
@@ -8,7 +9,7 @@ public class Hand{
  
   public Hand(Deck deck){
 	  max = 3;
-	  deck = deck;
+	  this.deck = deck;
     cards = new ArrayList<Card>();
 	  cards.add(deck.getRandom());
     cards.add(deck.getRandom());
