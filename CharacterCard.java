@@ -18,10 +18,16 @@ public abstract class CharacterCard extends Card{
 		this.HP -= card.getAtk();
 		card.hit(this.atk);
 	}
+	
+	public void hit(Player player){
+		player.hit(this.atk);
+	}
+
 	public void hit(int HP){
 		this.HP -= HP;
 	}
 	public void cast(Player player){}
+	public void cast(Card card){}
 
 	@Override
 	public String toString(){

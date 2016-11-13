@@ -16,7 +16,6 @@ public class Hand{
     nCards = 0;
 	  cards.add(deck.getRandom());
     cards.add(deck.getRandom());
-    cards.add(deck.getRandom());
   }
 
   //@ requires nCards() != max();
@@ -26,14 +25,19 @@ public class Hand{
     nCards += 1;
   }
 
-  public void play(int card){
-    card -= 1;
-    field.add( cards.remove(card) );
+  public void play(int wichCard, Player against){
+    Card card = cards.remove( wichCard-1 );
+    if(card instanceof SpellCard){
+      card.cast(against);
+    }
+    else
+    field.add( card );
   }
 
   public Field field(){return field;}
   public byte nCards(){return nCards;}
   public byte max(){return max;}
+  public Deck deck(){return deck;}
 
   @Override
   public String toString(){
