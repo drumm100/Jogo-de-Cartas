@@ -14,7 +14,7 @@ public class Hand{
     cards = new ArrayList<Card>();
 	  cards.add(deck.getRandom());
     cards.add(deck.getRandom());
-    cards.add(deck.getRandom());
+    //cards.add(deck.getRandom());
     nCards = 3;
   }
 
