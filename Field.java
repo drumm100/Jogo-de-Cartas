@@ -4,16 +4,17 @@ public class Field{
 
     private int nCards;
     private int MAX;
-    private ArrayList<Card> field;
+    private ArrayList<Card> cards;
 
     public Field(){
         MAX = 5;
-        field = new ArrayList<Card>();
+        cards = new ArrayList<Card>();
     }
 
     //@ requires nCards() != MAX();
     public void add(Card card){
-        field.add(card);
+        cards.add(card);
+        nCards+=1;
     }
 
     public int nCards(){return nCards;}
@@ -21,13 +22,17 @@ public class Field{
 
     //@ requires card <= nCards()
     public Card card(int card){
-        return field.get(card-1);
+        return cards.get(card-1);
+    }
+
+    public void remove(int card){
+        cards.remove(card-1);
     }
 
     @Override
     public String toString(){
         String string = "";
-        for(Card card : field){
+        for(Card card : cards){
             string += card;
         }
         return string;
