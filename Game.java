@@ -10,13 +10,19 @@ public class Game{
 
     public void play(){
         int player = (turn  % 2) + 1;
+        Player enemy = table.player( (player%2)+1 );
+
+        if(table.player(player).hand().deck().size() > 0)
+            table.player(player).hand().pick();
+
         System.out.println(table.player(player));
+        
         Scanner in = new Scanner(System.in);
         int card = in.nextInt();
         
-        table.player(player).hand().play(card);
+        table.player(player).hand().play(card, enemy);
 
-        attack( table.player( (player%2)+1 ) );
+        attack( enemy );
     }
 
     public void attack(Player player){
