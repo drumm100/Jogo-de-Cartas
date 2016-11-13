@@ -3,7 +3,7 @@ public abstract class Card{
 	protected String description;
 	protected int cost;
 	
-	public Card(String name, String description,int cost){
+	public Card(String name, String description, int cost){
 		this.name=name;
 		this.description=description;
 		this.cost = cost;
