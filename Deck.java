@@ -5,11 +5,11 @@ public class Deck{
   private Random random;
 
   public Deck(){
-    cards = AvailableCards.getInstance().getCards();
+    cards = new AvailableCards().getCards();
     random = new Random();
   }
 
-  //@ size() != 0;
+  //@ requires size() != 0;
   //@ ensures size() == \old(size() - 1);
   public Card getRandom(){
     int index = random.nextInt( cards.size() );

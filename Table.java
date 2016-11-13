@@ -11,7 +11,6 @@ public class Table{
 
     public static Table getInstance(){return instance;}
 
-    public Player player1(){return player1;}
-    public Player player2(){return player2;}
+    public Player player(int player){ return ( player == 1 ? player1 : player2 );}
     
 }

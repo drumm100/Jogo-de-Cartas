@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class AvailableCards{
-    private static AvailableCards instance = new AvailableCards();
     private ArrayList<Card> cards;
-    private AvailableCards(){
+
+    public AvailableCards(){
         cards = new ArrayList<Card>();
         cards.add( new Hero( "Daniel", "paladin", 2, 1, 2 ) ); // nome, descricao, custo, ataque, vida
         cards.add( new Monster( "Wolf", "a wolf", 3, 2, 2 ) );
@@ -15,8 +15,9 @@ public class AvailableCards{
             }
         } ) ); //isso aqui é uma carta de spell com um metodo cast q vai fazer basicamente qualquer coisa
         cards.add( new Hero( "Legolas", "archer", 3, 3, 2 ) );
+        cards.add( new Hero( "Jurek", "i aint the sharpest tool in the shed", 4, 5, 4 ) );
     }
-    public static AvailableCards getInstance(){return instance;}
+
     public ArrayList<Card> getCards(){return cards;}
     
 }

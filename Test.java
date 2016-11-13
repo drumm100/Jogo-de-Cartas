@@ -1,7 +1,11 @@
 public class Test{
     public static void main(String[] args){
         Table table = Table.getInstance();
-
-        System.out.println ( table.player1().hand() );
+        table.player(1).setName("Bruno");
+        table.player(2).setName("Andrius");
+        
+        System.out.println ( table.player(1) );
+        System.out.println ( table.player(2) );
+        
     }
 }

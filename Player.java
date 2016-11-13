@@ -11,4 +11,13 @@ public class Player{
 
     public Hand hand(){return hand;}
     public void hit(int HP){this.HP -= HP;}
+
+    @Override
+    public String toString(){
+        return name + "\n" + 
+               hand;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
 }

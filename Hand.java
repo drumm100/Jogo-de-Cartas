@@ -12,10 +12,10 @@ public class Hand{
 	  deck = new Deck();
     field = new Field();
     cards = new ArrayList<Card>();
+    nCards = 0;
 	  cards.add(deck.getRandom());
     cards.add(deck.getRandom());
-    //cards.add(deck.getRandom());
-    nCards = 3;
+    cards.add(deck.getRandom());
   }
 
   //@ requires nCards() != max();
