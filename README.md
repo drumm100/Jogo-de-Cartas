@@ -6,5 +6,7 @@ Vantagens das cartas:
 	hero > monster
 	monster > Spell
 
-classe player;
-toString card
+To Do:
+uma classe jogo, que guarda uma mesa, e tem os metodos de açao dos jogadores
+	attack(Card, Card)
+	attack(card, player)

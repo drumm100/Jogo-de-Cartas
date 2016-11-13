@@ -30,6 +30,7 @@ public class Hand{
     field.add( cards.remove(card) );
   }
 
+  public Field field(){return field;}
   public byte nCards(){return nCards;}
   public byte max(){return max;}
 
@@ -39,7 +40,7 @@ public class Hand{
     for(Card card : cards){
       string += card + " ";
     }
+    string += "\n -----------field------------ \n" + field + "--------------------\n";
     return string;
   }
-
 }

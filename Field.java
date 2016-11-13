@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 public class Field{
+    //@ invariant nCards() <= MAX();
 
     private int nCards;
     private int MAX;
@@ -17,6 +18,18 @@ public class Field{
 
     public int nCards(){return nCards;}
     public int MAX(){return MAX;}
-    
-    //aqui vai ser o campo, o jogador joga cartas aqui
+
+    //@ requires card <= nCards()
+    public Card card(int card){
+        return field.get(card-1);
+    }
+
+    @Override
+    public String toString(){
+        String string = "";
+        for(Card card : field){
+            string += card;
+        }
+        return string;
+    }
 }

@@ -5,12 +5,14 @@ public abstract class SpellCard extends Card{
 	public int getAtk(){return 1;} //isso aqui sepa ta chinelo
 	public int getHP(){return 1;}
 	public void hit(int HP){}
+	public void hit(Card card){}
 
 		@Override
 	public String toString(){
-		return "--Magia--\n" +
+		return "______________________\n" +
 			   name + "\n" + 
 			   description + "\n" + 
-			   "custo: " + cost + "\n";
+			   "custo: " + cost + 
+			   "\n______________________\n";
 	}
 }

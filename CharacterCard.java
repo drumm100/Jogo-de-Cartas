@@ -14,16 +14,21 @@ public abstract class CharacterCard extends Card{
 
 	public int getAtk(){return atk;}
 	public int getHP(){return HP;}
+	public void hit(Card card){
+		this.HP -= card.getAtk();
+		card.hit(this.atk);
+	}
 	public void hit(int HP){this.HP -= HP;}
 	public void cast(Player player){}
 
 	@Override
 	public String toString(){
-		return "--Personagem--\n" +
+		return "___________________________\n" +
 			   name + "\n" + 
 			   description + "\n" + 
 			   "custo: " + cost + "\n" +
 			   "ataque: " + atk + "\n" +
-			   "vida: " + HP + "\n";
+			   "vida: " + HP + 
+			   "\n___________________________\n";
 	}
 }
