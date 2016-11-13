@@ -35,7 +35,7 @@ public class Game{
             
             int card1 = in.nextInt();
             int card2 = in.nextInt();
-            if (card1 == 100 || card2 == 100) { 
+            if (card1 == 100 || card2 == 100){ 
                 turn +=1; 
                 break;
             }
