@@ -15,7 +15,10 @@ public class Player{
     public void attack(Player player, int card1, int card2){
         Card card = this.hand.field().card(card1);
         Card enemyCard = player.hand().field().card(card2);
+        
+        //hit enemyCard or enemy player
         card.hit(enemyCard);
+        //if card instanceof spellCard, use cast()
 
         if(card.getHP() <= 0) {
             this.hand.field().remove(card1);
