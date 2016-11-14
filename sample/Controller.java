@@ -18,6 +18,9 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 
 public class Controller {
+    public Tab tab_P1;
+    public Tab tab_P2;
+    public TabPane tab;
 
     // Bbutton dos decks dos jogadores
     public Button deck_P1;
