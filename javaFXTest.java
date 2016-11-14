@@ -11,7 +11,6 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Modality;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.DragEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 
@@ -60,10 +59,6 @@ public class javaFXTest extends Application{
         grid.setHgap(20);
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
-
-        // grid da mão do jogador, indicadores no campo (ou espaço entre as cartas)
-        // botao para confirmar jogada
-        // mao do jogador --> cartas com propriedade de hover no mouse
 
         // Define os botoes
         btnFieldCard1 = new Button();
@@ -182,7 +177,7 @@ public class javaFXTest extends Application{
         btnhandCard1.setMaxHeight(300);
         btnhandCard1.setMaxWidth(200);
         btnhandCard1.setOnAction((ActionEvent e) -> {
-            Game.getInstance().getPlayer().hand().play(1);
+            Game.getInstance().getPlayer().hand().play(1, Game.getInstance().getEnemyPlayer());
             showCards();
         });
         grid.add(btnhandCard1, 1, 2);
@@ -193,7 +188,7 @@ public class javaFXTest extends Application{
         btnhandCard2.setMaxHeight(300);
         btnhandCard2.setMaxWidth(200);
         btnhandCard2.setOnAction((ActionEvent e) -> {
-            Game.getInstance().getPlayer().hand().play(2);
+            Game.getInstance().getPlayer().hand().play(2, Game.getInstance().getEnemyPlayer());
             showCards();
         });
         grid.add(btnhandCard2, 2, 2);
@@ -204,7 +199,7 @@ public class javaFXTest extends Application{
         btnhandCard3.setMaxHeight(300);
         btnhandCard3.setMaxWidth(200);
         btnhandCard3.setOnAction((ActionEvent e) -> {
-            Game.getInstance().getPlayer().hand().play(3);
+            Game.getInstance().getPlayer().hand().play(3, Game.getInstance().getEnemyPlayer());
             showCards();
         });
         grid.add(btnhandCard3, 3, 2);
