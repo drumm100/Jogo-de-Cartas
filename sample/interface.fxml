@@ -13,13 +13,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<TabPane prefHeight="585.0" prefWidth="815.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<TabPane fx:id="tab" prefHeight="585.0" prefWidth="815.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
   <tabs>
-    <Tab text="Player 1">
+    <Tab fx:id="tab_P1" text="Player 1">
       <content>
-        <AnchorPane id="content_P1">
+        <AnchorPane id="content_P1" prefHeight="554.0" prefWidth="856.0">
           <children>
             <ImageView fx:id="bg_P1" fitHeight="325.0" fitWidth="872.0" layoutX="-26.0" layoutY="0.0" preserveRatio="true">
               <image>
@@ -29,17 +30,17 @@
             <Rectangle fill="BLUE" height="199.0" layoutX="47.0" layoutY="349.0" opacity="0.5" width="724.0" />
             <ImageView fx:id="hand1_P1" fitHeight="183.0" fitWidth="128.0" layoutX="58.0" layoutY="359.0" onMouseClicked="#ClickedHand1_P1">
               <image>
-                <Image url="@../cartas/monstro128.jpg" fx:id="Ihand1_P1" />
+                <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="hand2_P1" fitHeight="183.0" fitWidth="128.0" layoutX="206.0" layoutY="359.0" onMouseClicked="#ClickedHand2_P1">
               <image>
-                <Image url="@../cartas/monstro128.jpg" fx:id="Ihand2_P1" />
+                <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="hand3_P1" fitHeight="183.0" fitWidth="128.0" layoutX="354.0" layoutY="359.0" onMouseClicked="#ClickedHand3_P1">
               <image>
-                <Image url="@../cartas/monstro128.jpg" fx:id="Ihand3_P1" />
+                <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <Button fx:id="deck_P1" layoutX="637.0" layoutY="359.0" onMouseClicked="#deckClicked_P1" prefHeight="183.0" prefWidth="128.0" text="Deck" />
@@ -103,11 +104,17 @@
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
+            <Label fx:id="mana_P1" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="201.0" prefHeight="95.0" prefWidth="76.0" text="20" textAlignment="CENTER" textFill="WHITE">
+              <font>
+                <Font size="50.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label fx:id="vida_P1" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="720.0" layoutY="210.0" prefHeight="95.0" prefWidth="76.0" text="10" textAlignment="CENTER" textFill="WHITE" />
           </children>
         </AnchorPane>
       </content>
     </Tab>
-    <Tab text="Player 2">
+    <Tab fx:id="tab_P2" text="Player 2">
       <content>
         <AnchorPane id="content_P1">
           <children>
@@ -119,17 +126,17 @@
             <Rectangle fill="#cc0000" height="199.0" layoutX="47.0" layoutY="349.0" opacity="0.7" width="724.0" />
             <ImageView id="hand1_P1" fx:id="hand1_P2" fitHeight="183.0" fitWidth="128.0" layoutX="58.0" layoutY="359.0" onMouseClicked="#ClickedHand1_P2">
               <image>
-                <Image url="@../cartas/monstro128.jpg" fx:id="Ihand1_P1" />
+                <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView id="hand2_P1" fx:id="hand2_P2" fitHeight="183.0" fitWidth="128.0" layoutX="206.0" layoutY="359.0" onMouseClicked="#ClickedHand2_P2">
               <image>
-                <Image url="@../cartas/monstro128.jpg" fx:id="Ihand2_P1" />
+                <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView id="hand3_P1" fx:id="hand3_P2" fitHeight="183.0" fitWidth="128.0" layoutX="354.0" layoutY="359.0" onMouseClicked="#ClickedHand3_P2">
               <image>
-                <Image url="@../cartas/monstro128.jpg" fx:id="Ihand3_P1" />
+                <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <Button id="deck_P1" fx:id="deck_P2" layoutX="637.0" layoutY="359.0" onMouseClicked="#deckClicked_P2" prefHeight="183.0" prefWidth="128.0" text="Deck" />
@@ -193,6 +200,8 @@
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
+            <Label fx:id="mana_P2" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="24.0" layoutY="201.0" prefHeight="95.0" prefWidth="76.0" text="20" textAlignment="CENTER" textFill="WHITE" />
+            <Label fx:id="vida_P2" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="720.0" layoutY="210.0" prefHeight="95.0" prefWidth="76.0" text="10" textAlignment="CENTER" textFill="WHITE" />
           </children>
         </AnchorPane>
       </content>

@@ -23,6 +23,11 @@ public class Controller {
     public Button deck_P1;
     public Button deck_P2;
 
+    public Label mana_P1;
+    public Label vida_P1;
+
+    public Label mana_P2;
+    public Label vida_P2;
 
     // Referencia das ImagesView da hand do Jogador 1
     public ImageView hand3_P1;
