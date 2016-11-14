@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Modality;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.DragEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 
@@ -120,9 +121,11 @@ public class javaFXTest extends Application{
         btnEnemyFieldCard1.setMaxWidth(200);
         btnEnemyFieldCard1.setMinHeight(300);
         btnEnemyFieldCard1.setMinWidth(200);
-        btnEnemyFieldCard1.setOnMouseDragEntered((MouseEvent e) -> {
+        btnEnemyFieldCard1.setOnAction( (ActionEvent e) -> {
             selectedCard2 = 1;
-        });
+            Game.getInstance().getPlayer().attack(Game.getInstance().getEnemyPlayer(), selectedCard1, selectedCard2);
+            showCards();
+        } );
         grid.add(btnEnemyFieldCard1, 0, 0);
 
         btnEnemyFieldCard2 = new Button();
@@ -130,9 +133,11 @@ public class javaFXTest extends Application{
         btnEnemyFieldCard2.setMaxWidth(200);
         btnEnemyFieldCard2.setMinHeight(300);
         btnEnemyFieldCard2.setMinWidth(200);
-        btnEnemyFieldCard2.setOnMouseDragEntered((MouseEvent e) -> {
+        btnEnemyFieldCard2.setOnAction( (ActionEvent e) -> {
             selectedCard2 = 2;
-        });
+            Game.getInstance().getPlayer().attack(Game.getInstance().getEnemyPlayer(), selectedCard1, selectedCard2);
+            showCards();
+        } );
         grid.add(btnEnemyFieldCard2, 1, 0);
 
         btnEnemyFieldCard3 = new Button();
@@ -140,9 +145,11 @@ public class javaFXTest extends Application{
         btnEnemyFieldCard3.setMaxWidth(200);
         btnEnemyFieldCard3.setMinHeight(300);
         btnEnemyFieldCard3.setMinWidth(200);
-        btnEnemyFieldCard3.setOnMouseDragEntered((MouseEvent e) -> {
+        btnEnemyFieldCard3.setOnAction( (ActionEvent e) -> {
             selectedCard2 = 3;
-        });
+            Game.getInstance().getPlayer().attack(Game.getInstance().getEnemyPlayer(), selectedCard1, selectedCard2);
+            showCards();
+        } );
         grid.add(btnEnemyFieldCard3, 2, 0);
 
         btnEnemyFieldCard4 = new Button();
@@ -150,9 +157,11 @@ public class javaFXTest extends Application{
         btnEnemyFieldCard4.setMaxWidth(200);
         btnEnemyFieldCard4.setMinHeight(300);
         btnEnemyFieldCard4.setMinWidth(200);
-        btnEnemyFieldCard4.setOnMouseDragEntered((MouseEvent e) -> {
+        btnEnemyFieldCard4.setOnAction( (ActionEvent e) -> {
             selectedCard2 = 4;
-        });
+            Game.getInstance().getPlayer().attack(Game.getInstance().getEnemyPlayer(), selectedCard1, selectedCard2);
+            showCards();
+        } );
         grid.add(btnEnemyFieldCard4, 3, 0);
 
         btnEnemyFieldCard5 = new Button();
@@ -160,9 +169,11 @@ public class javaFXTest extends Application{
         btnEnemyFieldCard5.setMaxWidth(200);
         btnEnemyFieldCard5.setMinHeight(300);
         btnEnemyFieldCard5.setMinWidth(200);
-        btnEnemyFieldCard5.setOnMouseDragEntered((MouseEvent e) -> {
+        btnEnemyFieldCard5.setOnAction( (ActionEvent e) -> {
             selectedCard2 = 5;
-        });
+            Game.getInstance().getPlayer().attack(Game.getInstance().getEnemyPlayer(), selectedCard1, selectedCard2);
+            showCards();
+        } );
         grid.add(btnEnemyFieldCard5, 4, 0);
         
         btnhandCard1 = new Button();
@@ -207,7 +218,7 @@ public class javaFXTest extends Application{
         grid.add(btnDone, 2, 3);
 
         //players
-        
+
 
         showCards();
         // Adiciona o painel a cena e exibe        
@@ -222,21 +233,21 @@ public class javaFXTest extends Application{
         if(Game.getInstance().getPlayer().hand().hasCard(card))
         btn.setText(Game.getInstance().getPlayer().hand().card(card).toString());
         else
-        btn.setText("");
+        btn.setText("handCard" + card);
     }
 
     private void setAllyFieldCard(Button btn, int card){
         if(Game.getInstance().getPlayer().hand().field().hasCard(card))
         btn.setText(Game.getInstance().getPlayer().hand().field().card(card).toString());
         else
-        btn.setText("");
+        btn.setText("allyFieldCard" + card);
     }
 
     private void setEnemyFieldCard(Button btn, int card){
         if(Game.getInstance().getEnemyPlayer().hand().field().hasCard(card))
         btn.setText(Game.getInstance().getEnemyPlayer().hand().field().card(card).toString());
         else
-        btn.setText("");
+        btn.setText("enemyFieldCard" + card);
     }
         
     public static void main(String[] args) {
