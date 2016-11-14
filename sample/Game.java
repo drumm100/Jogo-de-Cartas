@@ -27,7 +27,7 @@ public class Game{
         int player = (turn  % 2) + 1;
         Player enemy = table.player( (player%2)+1 );
 
-        if(table.player(player).hand().deck().size() > 0)
+        if(table.player(player).hand().deck().size() > 0 && table.player(player).hand().nCards() <= 3)
             table.player(player).hand().pick();
     }
 
@@ -52,6 +52,7 @@ public class Game{
                 System.out.println("voce ganhou!");
                 System.exit(0);
             }
+
             play();
     }
 

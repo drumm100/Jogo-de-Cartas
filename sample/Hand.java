@@ -25,13 +25,11 @@ public class Hand{
     nCards += 1;
   }
 
-  public void play(int wichCard){
-    Card card = cards.remove( wichCard-1 );
-    field.add(card);
-  }
   public void play(int wichCard, Player against){
     Card card = cards.remove( wichCard-1 );
-    card.cast(against);
+    if (card instanceof SpellCard)
+      card.cast(against);
+    else field.add(card);
   }
 
   public Field field(){return field;}
