@@ -35,18 +35,33 @@ public class Controller {
     public ImageView hand1_P2;
 
     // Referencia para as Images e ImagesViews do field de cada jogador
-    // O field é o mesmo, porem os id's tem que ser diferentes, entao precisamos sempre garantir que field1_P1 = field1_P2
     public ImageView field1_P1;
     public ImageView field2_P1;
     public ImageView field3_P1;
     public ImageView field4_P1;
+    public ImageView field5_P1;
+    public ImageView field6_P1;
+
+    public ImageView field1_P1_enemy;
+    public ImageView field2_P1_enemy;
+    public ImageView field3_P1_enemy;
+    public ImageView field4_P1_enemy;
+    public ImageView field5_P1_enemy;
+    public ImageView field6_P1_enemy;
 
     public ImageView field1_P2;
     public ImageView field2_P2;
     public ImageView field3_P2;
     public ImageView field4_P2;
+    public ImageView field5_P2;
+    public ImageView field6_P2;
 
-    public ImageView teste;
+    public ImageView field1_P2_enemy;
+    public ImageView field2_P2_enemy;
+    public ImageView field3_P2_enemy;
+    public ImageView field4_P2_enemy;
+    public ImageView field5_P2_enemy;
+    public ImageView field6_P2_enemy;
 
 
     public void deckClicked_P1 (MouseEvent event) {/* Este método irá ser chamado quando o deck do player 1 for clicado */
@@ -56,8 +71,11 @@ public class Controller {
     public void deckClicked_P2(MouseEvent event) {/* Este método irá ser chamado quando o deck do player 2 for clicado */
     }
 
+
     public void ClickedHand1_P1(MouseEvent event) {/* Quando clicarem na primeira carta da Hand do player 1*/
+        
     }
+
     public void ClickedHand2_P1(MouseEvent event) {/* Quando clicarem na segunda carta da Hand do player 1*/}
     public void ClickedHand3_P1(MouseEvent event) {/* Quando clicarem na terceira carta da Hand do player 1*/}
 
