@@ -39,9 +39,7 @@ public class Player{
     @Override
     public String toString(){
         return "--" + name + "--\n" +
-                "HP: " + HP + "\n" + 
-               "-----Hand-----\n" + 
-                    hand;
+                "HP: " + HP + "\n";
     }
     public void setName(String name){
         this.name = name;

@@ -48,6 +48,10 @@ public class javaFXTest extends Application{
         setHandCard(btnhandCard1, 1);
         setHandCard(btnhandCard2, 2);
         setHandCard(btnhandCard3, 3);
+
+        //players
+        btnPlayer1.setText(Game.getInstance().getPlayer().toString());
+        btnPlayer2.setText(Game.getInstance().getEnemyPlayer().toString());
     }
         
     @Override
@@ -213,7 +217,11 @@ public class javaFXTest extends Application{
         grid.add(btnDone, 2, 3);
 
         //players
+        btnPlayer1 = new Button();
+        grid.add( btnPlayer1, 0, 2);
 
+        btnPlayer2 = new Button();
+        grid.add(btnPlayer2, 4, 2);
 
         showCards();
         // Adiciona o painel a cena e exibe        
