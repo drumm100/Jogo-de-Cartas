@@ -5,8 +5,8 @@ public class Table{
     private Player player2;
 
     private Table(){
-        player1 = new Player("");
-        player2 = new Player("");
+        player1 = new Player("player1");
+        player2 = new Player("player2");
     }
     public static Table getInstance(){return instance;}
     public Player player(int player){ return ( player == 1 ? player1 : player2 );}

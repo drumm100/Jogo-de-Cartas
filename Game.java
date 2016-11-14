@@ -52,6 +52,7 @@ public class Game{
                 System.out.println("voce ganhou!");
                 System.exit(0);
             }
+
             play();
     }
 

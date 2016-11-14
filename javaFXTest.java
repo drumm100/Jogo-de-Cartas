@@ -218,9 +218,17 @@ public class javaFXTest extends Application{
 
         //players
         btnPlayer1 = new Button();
+        btnPlayer1.setOnAction( (ActionEvent e) ->{
+            Game.getInstance().getPlayer().attack(Game.getInstance().getEnemyPlayer(), selectedCard1);
+            showCards();
+        });
         grid.add( btnPlayer1, 0, 2);
 
         btnPlayer2 = new Button();
+        btnPlayer2.setOnAction( (ActionEvent e) ->{
+            Game.getInstance().getPlayer().attack(Game.getInstance().getEnemyPlayer(), selectedCard1);
+            showCards();
+        });
         grid.add(btnPlayer2, 4, 2);
 
         showCards();
