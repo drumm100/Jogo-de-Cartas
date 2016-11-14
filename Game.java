@@ -1,11 +1,21 @@
 import java.util.Scanner;
 
 public class Game{
+    private static Game instance = new Game();
     private int turn;
     private Table table;
-    public Game(){
+
+    private Game(){
         turn = 0;
         table = Table.getInstance();
+    }
+
+    public Player getPlayer(){
+        return Table.getInstance().player(turn%2 + 1);
+    }
+
+    public static Game getInstance(){
+        return instance;
     }
 
     public void play(){
@@ -14,38 +24,34 @@ public class Game{
 
         if(table.player(player).hand().deck().size() > 0)
             table.player(player).hand().pick();
-
-        System.out.println(table.player(player));
-        
-        Scanner in = new Scanner(System.in);
-        int card = in.nextInt();
-        
-        table.player(player).hand().play(card, enemy);
-
-        attack( enemy );
     }
 
-    public void attack(Player player){
-        //temporario
-        Scanner in = new Scanner(System.in);
-        while(true){
-            System.out.println(table.player((turn%2)+1).hand() );
-            System.out.println("----enemyField------");
-            System.out.println(player.hand().field() );
+    public void attack(int card1, int card2){
+        int player = (turn  % 2) + 1;
+        Player enemy = table.player( (player%2)+1 );
+
+        table.player(player).attack( enemy, card1, card2 );
+    }
+
+    public void start(){
+            int player = (turn  % 2) + 1;
+            Player enemy = table.player( (player%2)+1 );
             
-            int card1 = in.nextInt();
-            int card2 = in.nextInt();
-            if (card1 == 100 || card2 == 100){ 
-                turn +=1; 
-                break;
+            System.out.println("player" +player+ "'s' turn");
+
+            if(table.player(player).getHP() <= 0 ){
+                System.out.println("voce perdeu!");
+                System.exit(0);
             }
-
-            table.player( (turn%2)+1 ).attack( player, card1, card2 );
-            turn += 1;
-            
+            else if(enemy.getHP() <= 0 ){
+                System.out.println("voce ganhou!");
+                System.exit(0);
+            }
             play();
-        }
-        play();
     }
 
+    public void setDone(){
+        turn += 1;
+        start();
+    }
 }

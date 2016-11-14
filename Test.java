@@ -4,6 +4,6 @@ public class Test{
         table.player(1).setName("Bruno");
         table.player(2).setName("Andrius");
         
-        new Game().play();
+        //new Game().play();
     }
 }

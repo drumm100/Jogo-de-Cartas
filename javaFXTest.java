@@ -10,12 +10,19 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Modality;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+
 
 public class javaFXTest extends Application{
     
     Button btnFieldCard1, btnFieldCard2, btnFieldCard3, btnFieldCard4, btnFieldCard5;
     Button btnEnemyFieldCard1, btnEnemyFieldCard2, btnEnemyFieldCard3, btnEnemyFieldCard4, btnEnemyFieldCard5;
-    Stage player1Stage;
+    Button btnhandCard1, btnhandCard2, btnhandCard3;
+    Button btnPlayer1, btnPlayer2, btnDone;
+    Label HP1, HP2;
+    Stage fieldStage;
     int selectedCard1 = 0;
     int selectedCard2 = 0;
 
@@ -25,13 +32,14 @@ public class javaFXTest extends Application{
     }
         
     @Override
-    public void start(Stage player1Stage) {
-        // Define o fieldGrid
-        GridPane fieldGrid = new GridPane();
-        fieldGrid.setAlignment(Pos.CENTER);
-        fieldGrid.setHgap(20);
-        fieldGrid.setVgap(10);
-        fieldGrid.setPadding(new Insets(25, 25, 25, 25));
+    public void start(Stage fieldStage) {
+        Game.getInstance().start();
+        // Define o grid
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(20);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
 
         // grid da mão do jogador, indicadores no campo (ou espaço entre as cartas)
         // botao para confirmar jogada
@@ -46,7 +54,7 @@ public class javaFXTest extends Application{
         btnFieldCard1.setOnAction((ActionEvent e) -> {
             selectedCard1 = 1;
         });
-        fieldGrid.add(btnFieldCard1, 0, 0);
+        grid.add(btnFieldCard1, 0, 0);
         
         btnFieldCard2 = new Button();
         btnFieldCard2.setMaxHeight(300);
@@ -56,7 +64,7 @@ public class javaFXTest extends Application{
         btnFieldCard2.setOnAction((ActionEvent e) -> {
             selectedCard1 = 2;
         });
-        fieldGrid.add(btnFieldCard2, 1, 0);
+        grid.add(btnFieldCard2, 1, 0);
 
         btnFieldCard3 = new Button();
         btnFieldCard3.setMaxHeight(300);
@@ -66,7 +74,7 @@ public class javaFXTest extends Application{
         btnFieldCard3.setOnAction((ActionEvent e) -> {
             selectedCard1 = 3;
         });
-        fieldGrid.add(btnFieldCard3, 2, 0);
+        grid.add(btnFieldCard3, 2, 0);
         
         btnFieldCard4 = new Button();
         btnFieldCard4.setMaxHeight(300);
@@ -76,7 +84,7 @@ public class javaFXTest extends Application{
         btnFieldCard4.setOnAction((ActionEvent e) -> {
             selectedCard1 = 4;
         });
-        fieldGrid.add(btnFieldCard4, 3, 0);
+        grid.add(btnFieldCard4, 3, 0);
         
         btnFieldCard5 = new Button();
         btnFieldCard5.setMaxHeight(300);
@@ -86,65 +94,96 @@ public class javaFXTest extends Application{
         btnFieldCard5.setOnAction((ActionEvent e) -> {
             selectedCard1 = 5;
         });
-        fieldGrid.add(btnFieldCard5, 4, 0);
+        grid.add(btnFieldCard5, 4, 0);
 
         btnEnemyFieldCard1 = new Button();
         btnEnemyFieldCard1.setMaxHeight(300);
         btnEnemyFieldCard1.setMaxWidth(200);
         btnEnemyFieldCard1.setMinHeight(300);
         btnEnemyFieldCard1.setMinWidth(200);
-        btnEnemyFieldCard1.setOnAction((ActionEvent e) -> {
+        btnEnemyFieldCard1.setOnMouseDragEntered((MouseEvent e) -> {
             selectedCard2 = 1;
         });
-        fieldGrid.add(btnEnemyFieldCard1, 0, 1);
+        grid.add(btnEnemyFieldCard1, 0, 1);
 
         btnEnemyFieldCard2 = new Button();
         btnEnemyFieldCard2.setMaxHeight(300);
         btnEnemyFieldCard2.setMaxWidth(200);
         btnEnemyFieldCard2.setMinHeight(300);
         btnEnemyFieldCard2.setMinWidth(200);
-        btnEnemyFieldCard2.setOnAction((ActionEvent e) -> {
+        btnEnemyFieldCard2.setOnMouseDragEntered((MouseEvent e) -> {
             selectedCard2 = 2;
         });
-        fieldGrid.add(btnEnemyFieldCard2, 1, 1);
+        grid.add(btnEnemyFieldCard2, 1, 1);
 
         btnEnemyFieldCard3 = new Button();
         btnEnemyFieldCard3.setMaxHeight(300);
         btnEnemyFieldCard3.setMaxWidth(200);
         btnEnemyFieldCard3.setMinHeight(300);
         btnEnemyFieldCard3.setMinWidth(200);
-        btnEnemyFieldCard3.setOnAction((ActionEvent e) -> {
+        btnEnemyFieldCard3.setOnMouseDragEntered((MouseEvent e) -> {
             selectedCard2 = 3;
         });
-        fieldGrid.add(btnEnemyFieldCard3, 2, 1);
+        grid.add(btnEnemyFieldCard3, 2, 1);
 
         btnEnemyFieldCard4 = new Button();
         btnEnemyFieldCard4.setMaxHeight(300);
         btnEnemyFieldCard4.setMaxWidth(200);
         btnEnemyFieldCard4.setMinHeight(300);
         btnEnemyFieldCard4.setMinWidth(200);
-        btnEnemyFieldCard4.setOnAction((ActionEvent e) -> {
+        btnEnemyFieldCard4.setOnMouseDragEntered((MouseEvent e) -> {
             selectedCard2 = 4;
         });
-        fieldGrid.add(btnEnemyFieldCard4, 3, 1);
+        grid.add(btnEnemyFieldCard4, 3, 1);
 
         btnEnemyFieldCard5 = new Button();
         btnEnemyFieldCard5.setMaxHeight(300);
         btnEnemyFieldCard5.setMaxWidth(200);
         btnEnemyFieldCard5.setMinHeight(300);
         btnEnemyFieldCard5.setMinWidth(200);
-        btnEnemyFieldCard5.setOnAction((ActionEvent e) -> {
+        btnEnemyFieldCard5.setOnMouseDragEntered((MouseEvent e) -> {
             selectedCard2 = 5;
         });
-        fieldGrid.add(btnEnemyFieldCard5, 4, 1);
+        grid.add(btnEnemyFieldCard5, 4, 1);
         
+        btnhandCard1 = new Button();
+        btnhandCard1.setMinHeight(300);
+        btnhandCard1.setMinWidth(200);
+        btnhandCard1.setMaxHeight(300);
+        btnhandCard1.setMaxWidth(200);
+        grid.add(btnhandCard1, 1, 2);
+
+        btnhandCard2 = new Button();
+        btnhandCard2.setMinHeight(300);
+        btnhandCard2.setMinWidth(200);
+        btnhandCard2.setMaxHeight(300);
+        btnhandCard2.setMaxWidth(200);
+        grid.add(btnhandCard2, 2, 2);
+
+        btnhandCard3 = new Button();
+        btnhandCard3.setMinHeight(300);
+        btnhandCard3.setMinWidth(200);
+        btnhandCard3.setMaxHeight(300);
+        btnhandCard3.setMaxWidth(200);
+        btnhandCard3.setOnAction((ActionEvent e) -> {
+            Game.getInstance().getPlayer().hand().play(3);
+        });
+        grid.add(btnhandCard3, 3, 2);
+
+        btnDone = new Button();
+        btnDone.setText("Done!");
+        btnDone.setOnAction((ActionEvent e) ->{
+            Game.getInstance().setDone();
+        });
+        grid.add(btnDone, 2, 3);
+
         ShowCards();
         // Adiciona o painel a cena e exibe        
-        Scene scene = new Scene(fieldGrid);
-        player1Stage = new Stage();
-        player1Stage.setTitle("jogador 1");
-        player1Stage.setScene(scene);
-        player1Stage.show();
+        Scene fieldScene = new Scene(grid);
+        fieldStage = new Stage();
+        fieldStage.setTitle("Field");
+        fieldStage.setScene(fieldScene);
+        fieldStage.show();
     }
         
     public static void main(String[] args) {
