@@ -14,6 +14,11 @@ public class Game{
         return Table.getInstance().player(turn%2 + 1);
     }
 
+    public Player getEnemyPlayer(){
+        int player = turn%2 + 1;
+        return table.player(player%2 + 1);
+    }
+
     public static Game getInstance(){
         return instance;
     }

@@ -39,6 +39,12 @@ public class Hand{
   public byte max(){return max;}
   public Deck deck(){return deck;}
 
+  public Card card(int card){
+    return cards.get(card-1);
+  }
+  public boolean hasCard(int card){
+    return card <= cards.size();
+  }
   @Override
   public String toString(){
     String string = "";

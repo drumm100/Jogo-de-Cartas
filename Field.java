@@ -25,6 +25,10 @@ public class Field{
         return cards.get(card-1);
     }
 
+    public boolean hasCard(int card){
+        return card <= cards.size();
+    }
+
     public void remove(int card){
         cards.remove(card-1);
     }
