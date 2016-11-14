@@ -19,17 +19,17 @@
             <Rectangle fill="BLUE" height="200.0" layoutX="15.0" layoutY="310.0" opacity="0.5" width="725.0" />
             <ImageView fx:id="hand1_P1" fitHeight="183.0" fitWidth="128.0" layoutX="26.0" layoutY="320.0" onMouseClicked="#ClickedHand1_P1">
               <image>
-                <Image fx:id="Ihand1_P1" url="@../monstro128.jpg" />
+                <Image fx:id="Ihand1_P1" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="hand2_P1" fitHeight="183.0" fitWidth="128.0" layoutX="174.0" layoutY="320.0" onMouseClicked="#ClickedHand2_P1">
               <image>
-                <Image fx:id="Ihand2_P1" url="@../monstro128.jpg" />
+                <Image fx:id="Ihand2_P1" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="hand3_P1" fitHeight="183.0" fitWidth="128.0" layoutX="322.0" layoutY="320.0" onMouseClicked="#ClickedHand3_P1">
               <image>
-                <Image fx:id="Ihand3_P1" url="@../monstro128.jpg" />
+                <Image fx:id="Ihand3_P1" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <Button fx:id="deck_P1" layoutX="605.0" layoutY="320.0" onMouseClicked="#deckClicked_P1" prefHeight="183.0" prefWidth="128.0" text="Deck" />
@@ -41,22 +41,22 @@
             </Label>
             <ImageView fx:id="field1_P1" fitHeight="183.0" fitWidth="128.0" layoutX="26.0" layoutY="58.0" onMouseClicked="#ClickedField1">
               <image>
-                <Image fx:id="Ifield1_P1" url="@../monstro128.jpg" />
+                <Image fx:id="Ifield1_P1" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="field2_P1" fitHeight="183.0" fitWidth="128.0" layoutX="210.0" layoutY="61.0" onMouseClicked="#ClickedField2">
               <image>
-                <Image fx:id="Ifield2_P1" url="@../monstro128.jpg" />
+                <Image fx:id="Ifield2_P1" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="field3_P1" fitHeight="183.0" fitWidth="128.0" layoutX="412.0" layoutY="61.0" onMouseClicked="#ClickedField3">
               <image>
-                <Image fx:id="Ifield3_P1" url="@../monstro128.jpg" />
+                <Image fx:id="Ifield3_P1" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="field4_P1" fitHeight="183.0" fitWidth="128.0" layoutX="597.0" layoutY="61.0" onMouseClicked="#ClickedField4">
               <image>
-                <Image fx:id="Ifield4_P1" url="@../monstro128.jpg" />
+                <Image fx:id="Ifield4_P1" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
           </children>
@@ -70,17 +70,17 @@
             <Rectangle fill="#d60010" height="200.0" layoutX="15.0" layoutY="310.0" opacity="0.5" width="725.0" />
             <ImageView fx:id="hand1_P2" fitHeight="183.0" fitWidth="128.0" layoutX="26.0" layoutY="320.0" onMouseClicked="#ClickedHand1_P2">
               <image>
-                <Image fx:id="Ihand1_P2" url="@../monstro128.jpg" />
+                <Image fx:id="Ihand1_P2" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="hand2_P2" fitHeight="183.0" fitWidth="128.0" layoutX="174.0" layoutY="320.0" onMouseClicked="#ClickedHand2_P2">
               <image>
-                <Image fx:id="Ihand2_P2" url="@../monstro128.jpg" />
+                <Image fx:id="Ihand2_P2" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="hand3_P2" fitHeight="183.0" fitWidth="128.0" layoutX="322.0" layoutY="320.0" onMouseClicked="#ClickedHand3_P2">
               <image>
-                <Image fx:id="Ihand3_P2" url="@../monstro128.jpg" />
+                <Image fx:id="Ihand3_P2" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <Button fx:id="deck_P2" layoutX="605.0" layoutY="320.0" onMouseClicked="#deckClicked_P2" prefHeight="183.0" prefWidth="128.0" text="Deck" />
@@ -88,22 +88,22 @@
             <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="14.0" layoutY="119.0" prefHeight="67.0" prefWidth="725.0" text="Campo de Batalha!" textAlignment="CENTER" />
             <ImageView fx:id="field1_P2" fitHeight="183.0" fitWidth="128.0" layoutX="26.0" layoutY="58.0" onMouseClicked="#ClickedField1">
               <image>
-                <Image fx:id="Ifield1_P2" url="@../monstro128.jpg" />
+                <Image fx:id="Ifield1_P2" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="field2_P2" fitHeight="183.0" fitWidth="128.0" layoutX="210.0" layoutY="61.0" onMouseClicked="#ClickedField2">
               <image>
-                <Image fx:id="Ifield2_P2" url="@../monstro128.jpg" />
+                <Image fx:id="Ifield2_P2" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="field3_P2" fitHeight="183.0" fitWidth="128.0" layoutX="412.0" layoutY="61.0" onMouseClicked="#ClickedField3">
               <image>
-                <Image fx:id="Ifield3_P2" url="@../monstro128.jpg" />
+                <Image fx:id="Ifield3_P2" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <ImageView fx:id="field4_P2" fitHeight="183.0" fitWidth="128.0" layoutX="597.0" layoutY="61.0" onMouseClicked="#ClickedField4">
               <image>
-                <Image fx:id="Ifield4_P2" url="@../monstro128.jpg" />
+                <Image fx:id="Ifield4_P2" url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
           </children>

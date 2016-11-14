@@ -1,5 +1,13 @@
 package sample;
+/*
+    Essa classe é responsavel por controlar o fxml. Dentro do fxml, quando
+    alguma acao é feita o fxml chama algum desses metodos. Toda a funcionalidade
+    da interface é feita por meio dessa classe
 
+    Já coloquei todos os Buttons e Images como variaveis de instancias para acessar
+    os botoes e imagens na interface, no metodo deckClicked_P1 eu fiz um exemplo de como
+    funciona.
+ */
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -42,7 +50,7 @@ public class Controller {
 
 
     public void deckClicked_P1 (MouseEvent event) {/* Este método irá ser chamado quando o deck do player 1 for clicado */
-        hand1_P1.setImage(new Image("heroi128.jpg")); // so um exemplo de como funciona
+        hand1_P1.setImage(new Image("cartas/heroi128.jpg")); // so um exemplo de como funciona
     }
 
     public void deckClicked_P2(MouseEvent event) {/* Este método irá ser chamado quando o deck do player 2 for clicado */
