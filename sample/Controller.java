@@ -51,6 +51,10 @@ public class Controller {
     //variaveis pra selecionar as cartas
     private byte selectedCard1, selectedCard2;
 
+
+    public void showCards(){
+
+    }
     public void deckClicked_P1 (MouseEvent event) {/* Este método irá ser chamado quando o deck do player 1 for clicado */
         hand1_P1.setImage(new Image("cartas/heroi128.jpg")); // so um exemplo de como funciona
     }
@@ -76,11 +80,15 @@ public class Controller {
         Game.getInstance().getPlayer().hand().play(3, Game.getInstance().getEnemyPlayer());
     }
 
+    private void setAllyFieldCard(ImagesView cardImage, int card){
+        if(Game.getInstance().getPlayer().hand().field().hasCard(card))
+            cardImage.setText(Game.getInstance().getPlayer().hand().field().card(card).toString());
+        else
+            cardImage.setText("allyFieldCard" + card);
+    }
+
     public void ClickedField1(MouseEvent event) {/*Quando o field for clicado, independente do player*/}
     public void ClickedField2(MouseEvent event) {/*Quando o field for clicado, independente do player*/}
     public void ClickedField3(MouseEvent event) {/*Quando o field for clicado, independente do player*/}
     public void ClickedField4(MouseEvent event) {/*Quando o field for clicado, independente do player*/}
-
-
-
 }
