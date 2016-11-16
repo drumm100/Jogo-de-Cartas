@@ -1,3 +1,4 @@
+package sample;
 public abstract class CharacterCard extends Card{
 	private int atk; 
 	private int HP;

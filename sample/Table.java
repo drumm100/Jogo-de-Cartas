@@ -1,3 +1,4 @@
+package sample;
 public class Table{
 
     private static Table instance = new Table();    

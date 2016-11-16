@@ -16,6 +16,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.Tab;
 
 public class Controller {
     public Tab tab_P1;
@@ -110,10 +112,12 @@ public class Controller {
         showCards();
     }
 
-    private void setAllyFieldCard(ImagesView cardImage, int card){
-        if(Game.getInstance().getPlayer().hand().field().hasCard(card))
-            cardImage.setText(Game.getInstance().getPlayer().hand().field().card(card).toString());
-        else
-            cardImage.setText("allyFieldCard" + card);
+    private void setAllyFieldCard(ImageView cardImage, int card){
+        if(Game.getInstance().getPlayer().hand().field().hasCard(card)){
+            //imagem da carta naquela posiçao do campo
+        }
+        else{
+            //imagem de carta invisivel   
+        }
     }
 }
