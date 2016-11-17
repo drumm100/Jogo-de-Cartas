@@ -15,8 +15,6 @@ public class AvailableCards{
                 player.hit(5);
             }
         } ) ); //isso aqui é uma carta de spell com um metodo cast q vai fazer basicamente qualquer coisa
-        cards.add( new Hero( "Legolas", "archer", 3, 3, 2 ) );
-        cards.add( new Hero( "Jurek", "i aint the sharpest tool in the shed", 4, 5, 4 ) );
     }
 
     public ArrayList<Card> getCards(){return cards;}
