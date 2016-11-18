@@ -1,12 +1,18 @@
+package sample;
+import javafx.scene.image.Image;
+
 public abstract class SpellCard extends Card{
 
-	Spell spell;
+	private Spell spell;
+	private Image image;
 
-	public SpellCard(String name, String description, int cost, Spell spell){
+	public SpellCard(String name, String description, int cost, Spell spell, String url){
 		super(name, description, cost);
 		this.spell = spell;
+		image = new Image(url);
 	}
 
+	public Image getImage(){return image;}
 	public int getAtk(){return 1;} //isso aqui sepa ta chinelo
 	public int getHP(){return 1;}
 	public void hit(int HP){}

@@ -1,3 +1,4 @@
+package sample;
 public abstract class Card{
 	protected String name;
 	protected String description;
