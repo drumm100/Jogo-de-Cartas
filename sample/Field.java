@@ -33,8 +33,8 @@ public class Field{
 
     //@ requires hasCard(card);
     //@ ensures nCards() == \old(nCards()-1);
-    public void remove(int card){
-        cards.remove(card-1);
+    public Card remove(int card){
+        return cards.remove(card-1);
     }
 
     @Override

@@ -10,7 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.Tab;
 
-public class Controller {
+public class Controller{
     public Tab tab_P1;
     public Tab tab_P2;
     public TabPane tab;
@@ -77,22 +77,22 @@ public class Controller {
     public void deckClicked_P2(MouseEvent event) {/* Este método irá ser chamado quando o deck do player 2 for clicado */}
 
     public void ClickedHand1_P1(MouseEvent event) {
-        Game.getInstance().getPlayer().hand().play(1, Game.getInstance().getEnemyPlayer());
+        Game.getInstance().play(1);
     }
     public void ClickedHand2_P1(MouseEvent event) {
-        Game.getInstance().getPlayer().hand().play(2, Game.getInstance().getEnemyPlayer());
+        Game.getInstance().play(2);
     }
     public void ClickedHand3_P1(MouseEvent event) {
-        Game.getInstance().getPlayer().hand().play(3, Game.getInstance().getEnemyPlayer());
+        Game.getInstance().play(3);
     }
 
     public void ClickedHand1_P2(MouseEvent event) {
-        Game.getInstance().getPlayer().hand().play(1, Game.getInstance().getEnemyPlayer());
+        Game.getInstance().play(1);
     }
     public void ClickedHand2_P2(MouseEvent event) {
-        Game.getInstance().getPlayer().hand().play(2, Game.getInstance().getEnemyPlayer());
+        Game.getInstance().play(2);
     }
     public void ClickedHand3_P2(MouseEvent event) {
-        Game.getInstance().getPlayer().hand().play(3, Game.getInstance().getEnemyPlayer());
+        Game.getInstance().play(3);
     }
 }

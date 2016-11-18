@@ -25,19 +25,48 @@ public class Game{
         return instance;
     }
 
-    public void play(){
+    public void play(int wichCard){
+
         int player = (turn  % 2) + 1;
         Player enemy = table.player( (player%2)+1 );
 
-        if(table.player(player).hand().deck().size() > 0 && table.player(player).hand().nCards() <= 3)
-            table.player(player).hand().pick();
+        Card card = table.player(player).field().remove( wichCard-1 );
+        
+        if (card instanceof SpellCard)
+            card.cast(enemy);
+        else 
+            table.player(player).field().add(card);
     }
+
 
     public void attack(int card1, int card2){
         int player = (turn  % 2) + 1;
         Player enemy = table.player( (player%2)+1 );
 
-        table.player(player).attack( enemy, card1, card2 );
+        /*
+        public void attack(Player player, int card1, int card2){
+            Card card = this.hand.field().card(card1);
+            Card enemyCard = player.hand().field().card(card2);
+            
+            //hit enemyCard or enemy player
+            card.hit(enemyCard);
+            //if card instanceof spellCard, use cast()
+
+            if(card.getHP() <= 0) {
+                this.hand.field().remove(card1);
+                System.out.println("sua carta morreu");
+                }
+            if(enemyCard.getHP() <= 0){
+                System.out.println("a carta dele morreu");
+                player.hand().field().remove(card2);
+            } 
+        }
+
+        public void attack(Player player, int card1){
+            Card card = this.hand.field().card(card1);
+            card.hit(player);
+        }
+        */
     }
 
     public void start(){
@@ -55,7 +84,20 @@ public class Game{
                 System.exit(0);
             }
 
-            play();
+            if(turn == 1 || turn == 0){
+                pick();
+                pick();
+            }
+
+            pick();
+    }
+
+    public void pick(){
+        Player player = table.player( (turn  % 2) + 1 );
+
+        if(player.deck().size() > 0 && player.hand().nCards() <= 3){
+            player.hand().add( player.deck().getRandom() );
+        }
     }
 
     public void setDone(){
