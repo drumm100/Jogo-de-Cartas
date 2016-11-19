@@ -64,35 +64,10 @@ public class Controller{
     public ImageView field5_P2_enemy;
     public ImageView field6_P2_enemy;
 
-    //variaveis pra selecionar as cartas
-    private byte selectedCard1, selectedCard2;
+    public void showCards(){}
 
-
-    public void showCards(){
-
-    }
-    public void deckClicked_P1 (MouseEvent event) {/* Este método irá ser chamado quando o deck do player 1 for clicado */
-        hand1_P1.setImage(new Image("cartas/heroi128.jpg")); // so um exemplo de como funciona
-    }
-    public void deckClicked_P2(MouseEvent event) {/* Este método irá ser chamado quando o deck do player 2 for clicado */}
-
-    public void ClickedHand1_P1(MouseEvent event) {
-        Game.getInstance().play(1);
-    }
-    public void ClickedHand2_P1(MouseEvent event) {
-        Game.getInstance().play(2);
-    }
-    public void ClickedHand3_P1(MouseEvent event) {
-        Game.getInstance().play(3);
-    }
-
-    public void ClickedHand1_P2(MouseEvent event) {
-        Game.getInstance().play(1);
-    }
-    public void ClickedHand2_P2(MouseEvent event) {
-        Game.getInstance().play(2);
-    }
-    public void ClickedHand3_P2(MouseEvent event) {
-        Game.getInstance().play(3);
+    public void ClickedHand(int wichCard, MouseEvent event){ // joga carta wichCard no campo
+        Game.getInstance().play( wichCard );
+        showCards();
     }
 }
