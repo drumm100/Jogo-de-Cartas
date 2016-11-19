@@ -43,30 +43,32 @@ public class Game{
         int player = (turn  % 2) + 1;
         Player enemy = table.player( (player%2)+1 );
 
-        /*
-        public void attack(Player player, int card1, int card2){
-            Card card = this.hand.field().card(card1);
-            Card enemyCard = player.hand().field().card(card2);
+        Card card = table.player(player).field().card(card1);
+        Card enemyCard = (card2 == -1 ? null : enemy.field().card(card2) );
             
-            //hit enemyCard or enemy player
-            card.hit(enemyCard);
-            //if card instanceof spellCard, use cast()
-
-            if(card.getHP() <= 0) {
-                this.hand.field().remove(card1);
-                System.out.println("sua carta morreu");
-                }
-            if(enemyCard.getHP() <= 0){
-                System.out.println("a carta dele morreu");
-                player.hand().field().remove(card2);
-            } 
+        if( card instanceof CharacterCard ){
+            if( card2 == -1 )
+                card.hit( enemy );
+            else
+                card.hit( enemyCard );
+        }
+        else{
+            if( card2 == -1 )
+                card.cast( enemy );
+            else
+                card.cast( enemyCard );
         }
 
-        public void attack(Player player, int card1){
-            Card card = this.hand.field().card(card1);
-            card.hit(player);
+        if(card.getHP() <= 0){
+            table.player(player).field().remove(card1);
+            System.out.println("sua carta morreu");
         }
-        */
+        if(enemyCard.getHP() <= 0){
+            System.out.println("a carta dele morreu");
+            enemy.field().remove(card2);
+        }
+        //condiçoes de jogo terminado
+        //opçao de atacar o outro player
     }
 
     public void start(){
