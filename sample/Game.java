@@ -24,40 +24,63 @@ public class Game{
         return instance;
     }
 
-    public void play(){
-        int player = (turn  % 2) + 1;
-        Player enemy = table.player( (player%2)+1 );
-
-        if(table.player(player).hand().deck().size() > 0 && table.player(player).hand().nCards() <= 3)
-            table.player(player).hand().pick();
+    public void play(int wichCard){// joga a carta da mão no campo
+        Card card = getPlayer().field().remove( wichCard-1 );
+        getPlayer().field().add(card);
     }
 
-    public void attack(int card1, int card2){
-        int player = (turn  % 2) + 1;
-        Player enemy = table.player( (player%2)+1 );
-
-        table.player(player).attack( enemy, card1, card2 );
-    }
-
-    public void start(){
-            int player = (turn  % 2) + 1;
-            Player enemy = table.player( (player%2)+1 );
+    public void attack(int card1, int card2){//ataca outra carta, ou o player inimigo
+        Card card = getPlayer().field().card(card1);
+        Card enemyCard = (card2 == -1 ? null : getEnemyPlayer().field().card(card2) );
             
-            System.out.println("player" +player+ "'s' turn");
+        if( card instanceof CharacterCard ){
+            if( card2 == -1 )
+                card.hit( getEnemyPlayer() );
+            else
+                card.hit( enemyCard );
+        }
+        else{
+            if( card2 == -1 )
+                card.cast( getEnemyPlayer() );
+            else
+                card.cast( enemyCard );
+        }
 
-            if(table.player(player).getHP() <= 0 ){
-                System.out.println("voce perdeu!");
-                System.exit(0);
-            }
-            else if(enemy.getHP() <= 0 ){
-                System.out.println("voce ganhou!");
-                System.exit(0);
-            }
+        // confere coisa p krl 
+        if(card.getHP() <= 0)
+            getPlayer().field().remove(card1);
+        if(enemyCard.getHP() <= 0)
+            getEnemyPlayer().field().remove(card2);
 
-            play();
+        else if(getEnemyPlayer().getHP() <= 0 ){
+            System.out.println("voce ganhou!");
+            System.exit(0);
+        }
+
+        //condiçoes de jogo terminado
+        //opçao de atacar o outro player
     }
 
-    public void setDone(){
+    public void start(){//começa o turno, compra cartas
+            System.out.println("player" + (turn%2 + 1) + "'s' turn");
+
+            if( getPlayer().deck().size() > 0 && getPlayer().hand().nCards() <= 3 ){
+                if(turn == 1 || turn == 0){
+                    pick();
+                    pick();
+                }
+
+                pick();
+            }
+    }
+
+    //@ requires getPlayer().deck().size() > 0;
+    //@ requires getPlayer().hand().nCards() <= 3;
+    public void pick(){//pega uma carta do deck, coloca na mao do jogador
+            getPlayer().hand().add( getPlayer().deck().getRandom() );
+    }
+
+    public void setDone(){//passa a jogada
         turn += 1;
         start();
     }
