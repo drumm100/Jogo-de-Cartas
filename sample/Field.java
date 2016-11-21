@@ -6,10 +6,12 @@ public class Field{
     private int nCards;
     private int MAX;
     private ArrayList<Card> cards;
+    private Card selected;
 
     public Field(){
         MAX = 4;
         cards = new ArrayList<Card>();
+        selected = null;
     }
 
     //@ requires nCards() < MAX();
@@ -19,12 +21,9 @@ public class Field{
         nCards+=1;
     }
 
-    public int nCards(){return nCards;}
-    public int MAX(){return MAX;}
-
     //@ requires card <= nCards();
     public Card card(int card){
-        return cards.get(card-1);
+        return cards.get(card);
     }
 
     public boolean hasCard(int card){
@@ -34,9 +33,14 @@ public class Field{
     //@ requires hasCard(card);
     //@ ensures nCards() == \old(nCards()-1);
     public Card remove(int card){
-        return cards.remove(card-1);
+        return cards.remove(card);
     }
 
+    //@ ensures nCards() == \old(nCards()-1);
+    public boolean remove(Card card){
+        return cards.remove(card);
+    }
+    
     @Override
     public String toString(){
         String string = "";
@@ -44,5 +48,17 @@ public class Field{
             string += card;
         }
         return string;
+    }
+
+    //getters
+    public Card getSelected(){return selected;}
+    public int nCards(){return nCards;}
+    public int MAX(){return MAX;}
+
+    //set
+
+    //@ requires hasCard(i);
+    public void setSelected(int i){ 
+        selected = cards.get(i); 
     }
 }

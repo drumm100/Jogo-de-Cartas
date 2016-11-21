@@ -16,7 +16,7 @@ public class Player{
 
     public Deck deck(){return deck;}
     public Field field(){return field;}
-    public int getHP(){return HP;}
+    public int HP(){return HP;}
     public Hand hand(){return hand;}
     public void hit(int HP){this.HP -= HP;}
     

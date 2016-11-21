@@ -66,8 +66,34 @@ public class Controller{
 
     public void showCards(){}
 
-    public void ClickedHand(int wichCard, MouseEvent event){ // joga carta wichCard no campo
+    public void clickedHand(int wichCard, MouseEvent event){ // joga carta wichCard no campo
         Game.getInstance().play( wichCard );
         showCards();
+    }
+
+    public void clickedAllyField(int wichCard, MouseEvent event){
+        Game.getInstance().getPlayer().field().setSelected(wichCard);
+    }
+
+    public void clickedEnemyField(int wichCard, MouseEvent event){
+        Game game = Game.getInstance();
+        game.getEnemyPlayer().field().setSelected(wichCard);
+        Card allyCard = game.getPlayer().field().getSelected();
+        Card enemyCard = game.getEnemyPlayer().field().getSelected();
+
+        game.attack( allyCard, enemyCard );
+        game.checkCards( allyCard, enemyCard );
+    }
+
+    public void clickedEnemyPlayer(MouseEvent event){
+        Game game = Game.getInstance();
+        Player enemy = game.getEnemyPlayer();
+        Card card = game.getPlayer().field().getSelected();
+
+        game.attack(card, enemy );
+        
+        if ( game.didWin() ){
+            System.out.println("parabens por porra nenhuma, vc ganhou");
+        }
     }
 }
