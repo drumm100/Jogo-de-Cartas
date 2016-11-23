@@ -13,21 +13,19 @@ public class Game{
 
     public void play(int wichCard){// joga a carta da mão no campo
         Card card = getPlayer().field().remove( wichCard-1 );
-        getPlayer().field().add(card);
+        if( getPlayer().getActualMana() >= card.getCost() )
+            if(card instanceof CharacterCard )
+                getPlayer().field().add(card);
+            else
+                card.hit( getEnemyPlayer() );
     }
 
     public void attack(Card card, Card enemyCard){//ataca outra carta
-        if( card instanceof CharacterCard )
             card.hit( enemyCard );
-        else
-            card.cast( enemyCard );
     }
 
     public void attack(Card card, Player enemy){//ataca o player inimigo
-        if( card instanceof CharacterCard )
             card.hit( enemy );
-        else
-            card.cast( enemy );
     }
     
     public void start(){//começa o turno, compra cartas

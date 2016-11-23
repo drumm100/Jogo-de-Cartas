@@ -35,8 +35,6 @@ public abstract class CharacterCard extends Card{
 	public void hit(int HP){
 		this.HP -= HP;
 	}
-	public void cast(Player player){}
-	public void cast(Card card){}
 
 	@Override
 	public String toString(){

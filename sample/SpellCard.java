@@ -15,14 +15,11 @@ public abstract class SpellCard extends Card{
 	public int getAtk(){return 1;} //isso aqui sepa ta chinelo
 	public int getHP(){return 1;}
 	public void hit(int HP){}
-	public void hit(Card card){}
-	public void hit(Player player){}
 
-	public void cast(Player player){
+	public void hit(Player player){
 		spell.cast(player);
 	}
-
-	public void cast(Card card){
+	public void hit(Card card){
 		spell.cast(card);
 	}
 
