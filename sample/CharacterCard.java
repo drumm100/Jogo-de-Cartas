@@ -6,21 +6,15 @@ public abstract class CharacterCard extends Card{
 	private int HP;
 	private Type adv; //vantagem contra
 	private Type disAdv; //disvantagem contra
-	private ArrayList<Image> image;
 
-	public CharacterCard(String name, String description, int cost, int atk, int HP, Type adv, Type disAdv, String url){
-		super(name, description, cost);
+	public CharacterCard(String name, int cost, int atk, int HP, Type adv, Type disAdv, String url){
+		super(name, cost, url);
 		this.atk = atk;
 		this.HP = HP;
 		this.adv = adv;
 		this.disAdv = disAdv;
-		this.image = new ArrayList<Image>();
-		for(int i=1; i<=HP; i+=1){
-			image.add( new Image( url + i + ".jpg" ) );
-		}
 	}
 
-	public Image getCardImage(int HP){return image.get( HP-1 ); }
 	public int getAtk(){return atk;}
 	public int getHP(){return HP;}
 	public void hit(Card card){

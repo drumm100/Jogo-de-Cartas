@@ -28,17 +28,17 @@
               </image>
             </ImageView>
             <Rectangle fill="BLUE" height="199.0" layoutX="47.0" layoutY="349.0" opacity="0.5" width="724.0" />
-            <ImageView fx:id="hand1_P1" fitHeight="183.0" fitWidth="128.0" layoutX="58.0" layoutY="359.0" onMouseClicked="#ClickedHand1_P1">
+            <ImageView fx:id="1" fitHeight="183.0" fitWidth="128.0" layoutX="58.0" layoutY="359.0" onMouseClicked="#ClickedHand1_P1">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView fx:id="hand2_P1" fitHeight="183.0" fitWidth="128.0" layoutX="206.0" layoutY="359.0" onMouseClicked="#ClickedHand2_P1">
+            <ImageView fx:id="2" fitHeight="183.0" fitWidth="128.0" layoutX="206.0" layoutY="359.0" onMouseClicked="#ClickedHand2_P1">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView fx:id="hand3_P1" fitHeight="183.0" fitWidth="128.0" layoutX="354.0" layoutY="359.0" onMouseClicked="#ClickedHand3_P1">
+            <ImageView fx:id="3" fitHeight="183.0" fitWidth="128.0" layoutX="354.0" layoutY="359.0" onMouseClicked="#ClickedHand3_P1">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
@@ -124,78 +124,78 @@
               </image>
             </ImageView>
             <Rectangle fill="#cc0000" height="199.0" layoutX="47.0" layoutY="349.0" opacity="0.7" width="724.0" />
-            <ImageView id="hand1_P1" fx:id="hand1_P2" fitHeight="183.0" fitWidth="128.0" layoutX="58.0" layoutY="359.0" onMouseClicked="#ClickedHand1_P2">
+            <ImageView id="1" fx:id="hand1_P2" fitHeight="183.0" fitWidth="128.0" layoutX="58.0" layoutY="359.0" onMouseClicked="#ClickedHand1_P2">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="hand2_P1" fx:id="hand2_P2" fitHeight="183.0" fitWidth="128.0" layoutX="206.0" layoutY="359.0" onMouseClicked="#ClickedHand2_P2">
+            <ImageView id="2" fx:id="hand2_P2" fitHeight="183.0" fitWidth="128.0" layoutX="206.0" layoutY="359.0" onMouseClicked="#ClickedHand2_P2">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="hand3_P1" fx:id="hand3_P2" fitHeight="183.0" fitWidth="128.0" layoutX="354.0" layoutY="359.0" onMouseClicked="#ClickedHand3_P2">
+            <ImageView id="3" fx:id="hand3_P2" fitHeight="183.0" fitWidth="128.0" layoutX="354.0" layoutY="359.0" onMouseClicked="#ClickedHand3_P2">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
             <Button id="deck_P1" fx:id="deck_P2" layoutX="637.0" layoutY="359.0" onMouseClicked="#deckClicked_P2" prefHeight="183.0" prefWidth="128.0" text="Deck" />
-            <ImageView id="field1_P1" fx:id="field1_P2" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="165.0" preserveRatio="true">
+            <ImageView id="1" fx:id="field1_P2" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="165.0" preserveRatio="true">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field1_P1_enemy" fx:id="field1_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="40.0" preserveRatio="true" rotate="180.0">
+            <ImageView id="1" fx:id="field1_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="40.0" preserveRatio="true" rotate="180.0">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field2_P1" fx:id="field2_P2" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="165.0" preserveRatio="true">
+            <ImageView id="2" fx:id="field2_P2" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="165.0" preserveRatio="true">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field2_P1_enemy" fx:id="field2_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="40.0" preserveRatio="true" rotate="180.0">
+            <ImageView id="2" fx:id="field2_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="40.0" preserveRatio="true" rotate="180.0">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field3_P1" fx:id="field3_P2" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="3" fx:id="field3_P2" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field4_P1" fx:id="field4_P2" fitHeight="120.0" fitWidth="84.0" layoutX="409.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="4" fx:id="field4_P2" fitHeight="120.0" fitWidth="84.0" layoutX="409.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field5_P1" fx:id="field5_P2" fitHeight="120.0" fitWidth="84.0" layoutX="500.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="5" fx:id="field5_P2" fitHeight="120.0" fitWidth="84.0" layoutX="500.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field6_P1" fx:id="field6_P2" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="6" fx:id="field6_P2" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field3_P1_enemy" fx:id="field3_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+            <ImageView id="3" fx:id="field3_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field4_P1_enemy" fx:id="field4_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="410.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+            <ImageView id="4" fx:id="field4_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="410.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field5_P1_enemy" fx:id="field5_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="500.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+            <ImageView id="5" fx:id="field5_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="500.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <ImageView id="field6_P1_enemy" fx:id="field6_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+            <ImageView id="6" fx:id="field6_P2_enemy" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
               </image>

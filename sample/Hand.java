@@ -6,7 +6,7 @@ public class Hand{
   private byte nCards;
   private byte max;
   private List<Card> cards;
- 
+  
   public Hand(){
 	  max = 3;
     cards = new ArrayList<Card>();

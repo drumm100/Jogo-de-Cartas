@@ -64,18 +64,22 @@ public class Controller{
     public ImageView field5_P2_enemy;
     public ImageView field6_P2_enemy;
 
-    public void showCards(){}
+    public void showCards(){
+		hand1_P1.setImage( Game.getInstance().getPlayer().hand().card(1).getImage() );
+	}
 
-    public void clickedHand(int wichCard, MouseEvent event){ // joga carta wichCard no campo
+    public void clickedHand(MouseEvent event){ // joga carta wichCard no campo
+    	int wichCard = Integer.parseInt( ( (ImageView)event.getSource() ).getID() );
         Game.getInstance().play( wichCard );
         showCards();
     }
 
-    public void clickedAllyField(int wichCard, MouseEvent event){
+    public void clickedAllyField(MouseEvent event){
+    	int wichCard = Integer.parseInt( event.getID() );
         Game.getInstance().getPlayer().field().setSelected(wichCard);
     }
 
-    public void clickedEnemyField(int wichCard, MouseEvent event){
+    public void clickedEnemyField(MouseEvent event){
         Game game = Game.getInstance();
         game.getEnemyPlayer().field().setSelected(wichCard);
         Card allyCard = game.getPlayer().field().getSelected();

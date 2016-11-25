@@ -3,12 +3,10 @@ import javafx.scene.image.Image;
 public abstract class SpellCard extends Card{
 
 	private Spell spell;
-	private Image image;
-
-	public SpellCard(String name, String description, int cost, Spell spell, String url){
-		super(name, description, cost);
+	
+	public SpellCard(String name, int cost, Spell spell, String url){
+		super(name, cost, url);
 		this.spell = spell;
-		image = new Image(url);
 	}
 
 	public Image getImage(){return image;}
