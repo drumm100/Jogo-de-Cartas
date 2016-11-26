@@ -33,8 +33,12 @@ public class Controller{
     public ImageView E4;
     public ImageView E5;
     
+    public Label vida, mana;
 
     public void showCards(){
+        vida.setText( Integer.toString(Game.getInstance().getPlayer().HP()) );
+        mana.setText( Integer.toString(Game.getInstance().getPlayer().getMana()) );
+        
         if( Game.getInstance().getPlayer().hand().hasCard(0) )
 		    H0.setImage( Game.getInstance().getPlayer().hand().card(0).getImage() );
         else
@@ -133,6 +137,7 @@ public class Controller{
         if ( game.didWin() ){
             System.out.println("parabens por porra nenhuma, vc ganhou");
         }
+        showCards();
     }
 
     public int getIndexFromID(String id){
@@ -140,5 +145,6 @@ public class Controller{
     }
     public void setDone(){
         Game.getInstance().setDone();
+        showCards();
     }
 }

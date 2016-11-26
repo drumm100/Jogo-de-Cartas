@@ -21,6 +21,10 @@ public class Hand{
     return cards.remove( card );
   }
 
+  public boolean remove(Card card){
+    return cards.remove( card );
+  }
+
   public byte size(){return (byte)cards.size();}
   public byte max(){return max;}
 

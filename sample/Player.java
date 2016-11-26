@@ -1,7 +1,7 @@
 package sample;
 public class Player{
     private String name;
-    private int HP, maxMana, actualMana;
+    private int HP, mana;
     private Hand hand;
     private Deck deck;
     private Field field;
@@ -9,8 +9,7 @@ public class Player{
     public Player(String name){
         this.name = name;
         HP = 30;
-        maxMana = 1;
-        actualMana = 1;
+        mana = 1;
         hand = new Hand();
         deck = new Deck();
         field = new Field();
@@ -21,13 +20,11 @@ public class Player{
     public Field field(){return field;}
     public int HP(){return HP;}
     public Hand hand(){return hand;}
-    public int getMaxMana(){return maxMana;}
-    public int getActualMana(){return actualMana;}
+    public int getMana(){return mana;}
 
     //setters
     public void hit(int HP){this.HP -= HP;}
-    public void setMaxMana(int max){maxMana = max;}
-    public void setActualMana(int mana){actualMana = mana;}
+    public void setMana(int mana){this.mana = mana;}
 
     @Override
     public String toString(){

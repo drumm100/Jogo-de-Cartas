@@ -12,13 +12,18 @@ public class Game{
     }
 
     public void play(int wichCard){// joga a carta da mão no campo
-        Card card = getPlayer().hand().remove( wichCard );
+        Card card = getPlayer().hand().card( wichCard );
+        
+        if( getPlayer().getMana() >= card.getCost() ){
+            getPlayer().hand().remove(card);
 
-        if( getPlayer().getActualMana() >= card.getCost() )
             if(card instanceof CharacterCard )
                 getPlayer().field().add(card);
             else
                 card.hit( getEnemyPlayer() );
+            
+            getPlayer().setMana( getPlayer().getMana() - card.getCost() );
+        }
     }
 
     public void attack(Card card, Card enemyCard){//ataca outra carta
@@ -37,9 +42,9 @@ public class Game{
                     pick();
                     pick();
                 }
-
                 pick();
             }
+            getPlayer().setMana( turn );
     }
 
     //@ requires getPlayer().deck().size() > 0;
@@ -49,6 +54,7 @@ public class Game{
     }
 
     public void setDone(){//passa a jogada
+        getEnemyPlayer().setMana( getEnemyPlayer().getMana() + 1 );
         turn += 1;
         start();
     }
