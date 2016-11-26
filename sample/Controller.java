@@ -9,6 +9,7 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.Tab;
+import javafx.scene.Node;
 
 public class Controller{
     public Tab tab_P1;
@@ -69,17 +70,19 @@ public class Controller{
 	}
 
     public void clickedHand(MouseEvent event){ // joga carta wichCard no campo
-    	int wichCard = Integer.parseInt( ( (ImageView)event.getSource() ).getID() );
+    	int wichCard = Integer.parseInt( ( (Node)event.getSource() ).getId() );
         Game.getInstance().play( wichCard );
         showCards();
     }
 
     public void clickedAllyField(MouseEvent event){
-    	int wichCard = Integer.parseInt( event.getID() );
+    	int wichCard = Integer.parseInt( ( (Node)event.getSource() ).getId() );
         Game.getInstance().getPlayer().field().setSelected(wichCard);
     }
 
     public void clickedEnemyField(MouseEvent event){
+        int wichCard = Integer.parseInt( ( (Node)event.getSource() ).getId() );
+
         Game game = Game.getInstance();
         game.getEnemyPlayer().field().setSelected(wichCard);
         Card allyCard = game.getPlayer().field().getSelected();
@@ -87,6 +90,7 @@ public class Controller{
 
         game.attack( allyCard, enemyCard );
         game.checkCards( allyCard, enemyCard );
+        showCards();
     }
 
     public void clickedEnemyPlayer(MouseEvent event){
