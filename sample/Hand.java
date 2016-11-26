@@ -19,12 +19,16 @@ public class Hand{
     cards.add(card);
     nCards += 1;
   }
+  //@ ensures nCards() == \old(nCards()-1);
+  public Card remove(int card){
+    return cards.remove( card );
+  }
 
   public byte nCards(){return nCards;}
   public byte max(){return max;}
 
   public Card card(int card){
-    return cards.get(card-1);
+    return cards.get(card);
   }
   public boolean hasCard(int card){
     return card <= cards.size();

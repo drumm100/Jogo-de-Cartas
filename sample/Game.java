@@ -12,7 +12,8 @@ public class Game{
     }
 
     public void play(int wichCard){// joga a carta da mão no campo
-        Card card = getPlayer().field().remove( wichCard-1 );
+        Card card = getPlayer().hand().remove( wichCard );
+
         if( getPlayer().getActualMana() >= card.getCost() )
             if(card instanceof CharacterCard )
                 getPlayer().field().add(card);
