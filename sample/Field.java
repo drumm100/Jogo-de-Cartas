@@ -1,42 +1,40 @@
 package sample;
 import java.util.ArrayList;
 public class Field{
-    //@ invariant nCards() <= MAX();
+    //@ invariant size() <= MAX();
 
-    private int nCards;
     private int MAX;
     private ArrayList<Card> cards;
     private Card selected;
 
     public Field(){
-        MAX = 4;
+        MAX = 5;
         cards = new ArrayList<Card>();
         selected = null;
     }
 
-    //@ requires nCards() < MAX();
-    //@ ensures nCards() == \old(nCards() + 1);
+    //@ requires size() < MAX();
+    //@ ensures size() == \old(size() + 1);
     public void add(Card card){
         cards.add(card);
-        nCards+=1;
     }
 
-    //@ requires card <= nCards();
+    //@ requires card <= size();
     public Card card(int card){
         return cards.get(card);
     }
 
     public boolean hasCard(int card){
-        return card <= cards.size();
+        return card < cards.size();
     }
 
     //@ requires hasCard(card);
-    //@ ensures nCards() == \old(nCards()-1);
+    //@ ensures size() == \old(size()-1);
     public Card remove(int card){
         return cards.remove(card);
     }
 
-    //@ ensures nCards() == \old(nCards()-1);
+    //@ ensures size() == \old(size()-1);
     public boolean remove(Card card){
         return cards.remove(card);
     }
@@ -52,7 +50,7 @@ public class Field{
 
     //getters
     public Card getSelected(){return selected;}
-    public int nCards(){return nCards;}
+    public int size(){return cards.size();}
     public int MAX(){return MAX;}
 
     //set

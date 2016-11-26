@@ -37,37 +37,66 @@ public class Controller{
     public void showCards(){
         if( Game.getInstance().getPlayer().hand().hasCard(0) )
 		    H0.setImage( Game.getInstance().getPlayer().hand().card(0).getImage() );
-        if( Game.getInstance().getPlayer().hand().hasCard(0) )
+        else
+            H0.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().hand().hasCard(1) )
             H1.setImage( Game.getInstance().getPlayer().hand().card(1).getImage() );
-        if( Game.getInstance().getPlayer().hand().hasCard(0) )
+        else
+            H1.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().hand().hasCard(2) )
             H2.setImage( Game.getInstance().getPlayer().hand().card(2).getImage() );
+        else
+            H2.setImage( new Image("cartas/monstro128.jpg") );
 
         if( Game.getInstance().getPlayer().field().hasCard(0) )
             A0.setImage( Game.getInstance().getPlayer().field().card(0).getImage() );
-        if( Game.getInstance().getPlayer().field().hasCard(0) )
+        else
+            A0.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(1) )
             A1.setImage( Game.getInstance().getPlayer().field().card(1).getImage() );
-        if( Game.getInstance().getPlayer().field().hasCard(0) )
+        else
+            A1.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(2) )
             A2.setImage( Game.getInstance().getPlayer().field().card(2).getImage() );
-        if( Game.getInstance().getPlayer().field().hasCard(0) )
+        else
+            A2.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(3) )
             A3.setImage( Game.getInstance().getPlayer().field().card(3).getImage() );
-        if( Game.getInstance().getPlayer().field().hasCard(0) )
+        else
+            A3.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(4) )
             A4.setImage( Game.getInstance().getPlayer().field().card(4).getImage() );
-        if( Game.getInstance().getPlayer().field().hasCard(0) )
+        else
+            A4.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(5) )
             A5.setImage( Game.getInstance().getPlayer().field().card(5).getImage() );
-        
+        else
+            A5.setImage( new Image("cartas/monstro128.jpg") );
+
         if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
             E0.setImage( Game.getInstance().getEnemyPlayer().field().card(0).getImage() );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
+        else
+            E0.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(1) )
             E1.setImage( Game.getInstance().getEnemyPlayer().field().card(1).getImage() );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
+        else
+            E1.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(2) )
             E2.setImage( Game.getInstance().getEnemyPlayer().field().card(2).getImage() );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
+        else
+            E2.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(3) )
             E3.setImage( Game.getInstance().getEnemyPlayer().field().card(3).getImage() );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
+        else
+            E3.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(4) )
             E4.setImage( Game.getInstance().getEnemyPlayer().field().card(4).getImage() );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
+        else
+            E4.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(5) )
             E5.setImage( Game.getInstance().getEnemyPlayer().field().card(5).getImage() );
-
+        else
+            E5.setImage( new Image("cartas/monstro128.jpg") );
 	}
 
     public void clickedHand(MouseEvent event){ // joga carta wichCard no campo
