@@ -13,6 +13,10 @@ public class Field{
         selected = null;
     }
 
+    public void rstAtk(){
+        for(Card card : cards)
+            ((CharacterCard)card).setAtk(false);
+    }
     //@ requires size() < MAX();
     //@ ensures size() == \old(size() + 1);
     public void add(Card card){
@@ -23,7 +27,6 @@ public class Field{
     public Card card(int card){
         return cards.get(card);
     }
-
     public boolean hasCard(int card){
         return card < cards.size();
     }
@@ -33,12 +36,11 @@ public class Field{
     public Card remove(int card){
         return cards.remove(card);
     }
-
     //@ ensures size() == \old(size()-1);
     public boolean remove(Card card){
         return cards.remove(card);
     }
-    
+
     @Override
     public String toString(){
         String string = "";

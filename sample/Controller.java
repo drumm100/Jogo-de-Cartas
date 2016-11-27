@@ -22,82 +22,25 @@ public class Controller implements Initializable{
 
     @FXML
     public Button passaJogada;
-
     @FXML
     public Label restaCartas;
-
     @FXML
     public ImageView H0, H1, H2;
-
     @FXML
     public ImageView A0, A1, A2, A3, A4, A5;
-
     @FXML
     public ImageView E0, E1, E2, E3, E4, E5;
-
     @FXML
     public Label vida, mana;
 
     @Override
     public void initialize(java.net.URL arg0, ResourceBundle arg1){
-        System.out.println("Chamando initialize");
-
         vida.setText( Integer.toString(Game.getInstance().getPlayer().HP()) );
         mana.setText( Integer.toString(Game.getInstance().getPlayer().getMana()) );
 
         H0.setImage( Game.getInstance().getPlayer().hand().card(0).getImage() );
         H1.setImage( Game.getInstance().getPlayer().hand().card(1).getImage() );
         H2.setImage( Game.getInstance().getPlayer().hand().card(2).getImage() );
-
-        if( Game.getInstance().getPlayer().field().hasCard(0) )
-            A0.setImage( new Image( getAllyURL(0) ) );
-        else
-            A0.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getPlayer().field().hasCard(1) )
-            A1.setImage( new Image( getAllyURL(1) ) );
-        else
-            A1.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getPlayer().field().hasCard(2) )
-            A2.setImage( new Image( getAllyURL(2) ) );
-        else
-            A2.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getPlayer().field().hasCard(3) )
-            A3.setImage( new Image( getAllyURL(3) ) );
-        else
-            A3.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getPlayer().field().hasCard(4) )
-            A4.setImage( new Image( getAllyURL(4) ) );
-        else
-            A4.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getPlayer().field().hasCard(5) )
-            A5.setImage( new Image( getAllyURL(5) ) );
-        else
-            A5.setImage( new Image("cartas/monstro128.jpg") );
-
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
-            E0.setImage( new Image( getEnemyURL(0) ) );
-        else
-            E0.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(1) )
-            E1.setImage( new Image( getEnemyURL(1) ) );
-        else
-            E1.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(2) )
-            E2.setImage( new Image( getEnemyURL(2) ) );
-        else
-            E2.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(3) )
-            E3.setImage( new Image( getEnemyURL(3) ) );
-        else
-            E3.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(4) )
-            E4.setImage( new Image( getEnemyURL(4) ) );
-        else
-            E4.setImage( new Image("cartas/monstro128.jpg") );
-        if( Game.getInstance().getEnemyPlayer().field().hasCard(5) )
-            E5.setImage( new Image( getEnemyURL(5) ) );
-        else
-            E5.setImage( new Image("cartas/monstro128.jpg") );
     }
 
     public void showCards(){
@@ -180,15 +123,17 @@ public class Controller implements Initializable{
     }
 
     public void clickedEnemyField(MouseEvent event){
-        int wichCard = getIndexFromID( ( (Node)event.getSource() ).getId() );
-
         Game game = Game.getInstance();
-        game.getEnemyPlayer().field().setSelected(wichCard);
         Card allyCard = game.getPlayer().field().getSelected();
+        if( ((CharacterCard)allyCard).attacked() ) return;
+
+        int wichCard = getIndexFromID( ( (Node)event.getSource() ).getId() );
+        game.getEnemyPlayer().field().setSelected(wichCard);
         Card enemyCard = game.getEnemyPlayer().field().getSelected();
 
         game.attack( allyCard, enemyCard );
         game.checkCards( allyCard, enemyCard );
+        ((CharacterCard)allyCard).setAtk(true);
         showCards();
     }
 
@@ -211,7 +156,7 @@ public class Controller implements Initializable{
 
     public void setDone(){
         Game.getInstance().setDone();
-        tab_P1.setText("Alguem"); //Faz aquela mogica pra mudar o player certinho
+        tab_P1.setText(Game.getInstance().getPlayer().toString()); //Faz aquela mogica pra mudar o player certinho
         showCards();
     }
     private String getAllyURL(int whichCard){

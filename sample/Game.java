@@ -55,6 +55,7 @@ public class Game{
 
     public void setDone(){//passa a jogada
         getEnemyPlayer().setMana( getEnemyPlayer().getMana() + 1 );
+        getPlayer().field().rstAtk();
         turn += 1;
         start();
     }
