@@ -1,5 +1,9 @@
 package sample;
 
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,33 +16,87 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.Tab;
 import javafx.scene.Node;
 
-public class Controller{
+public class Controller implements Initializable{
     public Tab tab_P1;
 
-    public ImageView H0;
-    public ImageView H1;
-    public ImageView H2;
-    
-    public ImageView A0;
-    public ImageView A1;
-    public ImageView A2;
-    public ImageView A3;
-    public ImageView A4;
-    public ImageView A5;
-    
-    public ImageView E0;
-    public ImageView E1;
-    public ImageView E2;
-    public ImageView E3;
-    public ImageView E4;
-    public ImageView E5;
-    
+    @FXML
+    public ImageView H0, H1, H2;
+
+    @FXML
+    public ImageView A0, A1, A2, A3, A4, A5;
+
+    @FXML
+    public ImageView E0, E1, E2, E3, E4, E5;
+
+    @FXML
     public Label vida, mana;
+
+    @Override
+    public void initialize(java.net.URL arg0, ResourceBundle arg1){
+        System.out.println("Chamando initialize");
+
+        vida.setText( Integer.toString(Game.getInstance().getPlayer().HP()) );
+        mana.setText( Integer.toString(Game.getInstance().getPlayer().getMana()) );
+
+        H0.setImage( Game.getInstance().getPlayer().hand().card(0).getImage() );
+        H1.setImage( Game.getInstance().getPlayer().hand().card(1).getImage() );
+        H2.setImage( Game.getInstance().getPlayer().hand().card(2).getImage() );
+
+        if( Game.getInstance().getPlayer().field().hasCard(0) )
+            A0.setImage( new Image( getAllyURL(0) ) );
+        else
+            A0.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(1) )
+            A1.setImage( new Image( getAllyURL(1) ) );
+        else
+            A1.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(2) )
+            A2.setImage( new Image( getAllyURL(2) ) );
+        else
+            A2.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(3) )
+            A3.setImage( new Image( getAllyURL(3) ) );
+        else
+            A3.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(4) )
+            A4.setImage( new Image( getAllyURL(4) ) );
+        else
+            A4.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getPlayer().field().hasCard(5) )
+            A5.setImage( new Image( getAllyURL(5) ) );
+        else
+            A5.setImage( new Image("cartas/monstro128.jpg") );
+
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
+            E0.setImage( new Image( getEnemyURL(0) ) );
+        else
+            E0.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(1) )
+            E1.setImage( new Image( getEnemyURL(1) ) );
+        else
+            E1.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(2) )
+            E2.setImage( new Image( getEnemyURL(2) ) );
+        else
+            E2.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(3) )
+            E3.setImage( new Image( getEnemyURL(3) ) );
+        else
+            E3.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(4) )
+            E4.setImage( new Image( getEnemyURL(4) ) );
+        else
+            E4.setImage( new Image("cartas/monstro128.jpg") );
+        if( Game.getInstance().getEnemyPlayer().field().hasCard(5) )
+            E5.setImage( new Image( getEnemyURL(5) ) );
+        else
+            E5.setImage( new Image("cartas/monstro128.jpg") );
+    }
 
     public void showCards(){
         vida.setText( Integer.toString(Game.getInstance().getPlayer().HP()) );
         mana.setText( Integer.toString(Game.getInstance().getPlayer().getMana()) );
-        
+
         if( Game.getInstance().getPlayer().hand().hasCard(0) )
 		    H0.setImage( Game.getInstance().getPlayer().hand().card(0).getImage() );
         else
@@ -133,7 +191,7 @@ public class Controller{
         Card card = game.getPlayer().field().getSelected();
 
         game.attack(card, enemy );
-        
+
         if ( game.didWin() ){
             System.out.println("parabens por porra nenhuma, vc ganhou");
         }
@@ -153,5 +211,5 @@ public class Controller{
     private String getEnemyURL(int whichCard){
         return ((CharacterCard)Game.getInstance().getEnemyPlayer().field().card(whichCard)).getURL( Game.getInstance().getEnemyPlayer().field().card(whichCard).getHP() );
     }
-    
+
 }
