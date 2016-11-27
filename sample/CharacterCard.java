@@ -30,6 +30,10 @@ public abstract class CharacterCard extends Card{
 		this.HP -= HP;
 	}
 
+	public String getURL(int hp){
+		return name + "_" + hp + ".png";
+	}
+
 	@Override
 	public String toString(){
 		return "___________________________\n" +

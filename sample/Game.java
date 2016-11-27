@@ -37,7 +37,7 @@ public class Game{
     public void start(){//começa o turno, compra cartas
             System.out.println("player" + (turn%2 + 1) + "'s' turn");
 
-            if( getPlayer().deck().size() > 0 && getPlayer().hand().size() <= 3 ){
+            if( getPlayer().deck().size() > 0 && getPlayer().hand().size() < 3 ){
                 if(turn == 1 || turn == 0){
                     pick();
                     pick();

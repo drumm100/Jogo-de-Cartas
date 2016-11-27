@@ -53,52 +53,52 @@ public class Controller{
             H2.setImage( new Image("cartas/monstro128.jpg") );
 
         if( Game.getInstance().getPlayer().field().hasCard(0) )
-            A0.setImage( Game.getInstance().getPlayer().field().card(0).getImage() );
+            A0.setImage( new Image( getAllyURL(0) ) );
         else
             A0.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getPlayer().field().hasCard(1) )
-            A1.setImage( Game.getInstance().getPlayer().field().card(1).getImage() );
+            A1.setImage( new Image( getAllyURL(1) ) );
         else
             A1.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getPlayer().field().hasCard(2) )
-            A2.setImage( Game.getInstance().getPlayer().field().card(2).getImage() );
+            A2.setImage( new Image( getAllyURL(2) ) );
         else
             A2.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getPlayer().field().hasCard(3) )
-            A3.setImage( Game.getInstance().getPlayer().field().card(3).getImage() );
+            A3.setImage( new Image( getAllyURL(3) ) );
         else
             A3.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getPlayer().field().hasCard(4) )
-            A4.setImage( Game.getInstance().getPlayer().field().card(4).getImage() );
+            A4.setImage( new Image( getAllyURL(4) ) );
         else
             A4.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getPlayer().field().hasCard(5) )
-            A5.setImage( Game.getInstance().getPlayer().field().card(5).getImage() );
+            A5.setImage( new Image( getAllyURL(5) ) );
         else
             A5.setImage( new Image("cartas/monstro128.jpg") );
 
         if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
-            E0.setImage( Game.getInstance().getEnemyPlayer().field().card(0).getImage() );
+            E0.setImage( new Image( getEnemyURL(0) ) );
         else
             E0.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(1) )
-            E1.setImage( Game.getInstance().getEnemyPlayer().field().card(1).getImage() );
+            E1.setImage( new Image( getEnemyURL(1) ) );
         else
             E1.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(2) )
-            E2.setImage( Game.getInstance().getEnemyPlayer().field().card(2).getImage() );
+            E2.setImage( new Image( getEnemyURL(2) ) );
         else
             E2.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(3) )
-            E3.setImage( Game.getInstance().getEnemyPlayer().field().card(3).getImage() );
+            E3.setImage( new Image( getEnemyURL(3) ) );
         else
             E3.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(4) )
-            E4.setImage( Game.getInstance().getEnemyPlayer().field().card(4).getImage() );
+            E4.setImage( new Image( getEnemyURL(4) ) );
         else
             E4.setImage( new Image("cartas/monstro128.jpg") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(5) )
-            E5.setImage( Game.getInstance().getEnemyPlayer().field().card(5).getImage() );
+            E5.setImage( new Image( getEnemyURL(5) ) );
         else
             E5.setImage( new Image("cartas/monstro128.jpg") );
 	}
@@ -147,4 +147,11 @@ public class Controller{
         Game.getInstance().setDone();
         showCards();
     }
+    private String getAllyURL(int whichCard){
+        return ((CharacterCard)Game.getInstance().getPlayer().field().card(whichCard)).getURL( Game.getInstance().getPlayer().field().card(whichCard).getHP() );
+    }
+    private String getEnemyURL(int whichCard){
+        return ((CharacterCard)Game.getInstance().getEnemyPlayer().field().card(whichCard)).getURL( Game.getInstance().getEnemyPlayer().field().card(whichCard).getHP() );
+    }
+    
 }
