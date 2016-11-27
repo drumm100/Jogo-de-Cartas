@@ -17,7 +17,14 @@ import javafx.scene.control.Tab;
 import javafx.scene.Node;
 
 public class Controller implements Initializable{
+    public TabPane tab;
     public Tab tab_P1;
+
+    @FXML
+    public Button passaJogada;
+
+    @FXML
+    public Label restaCartas;
 
     @FXML
     public ImageView H0, H1, H2;
@@ -201,8 +208,10 @@ public class Controller implements Initializable{
     public int getIndexFromID(String id){
         return Integer.parseInt( id.substring(1) );
     }
+
     public void setDone(){
         Game.getInstance().setDone();
+        tab_P1.setText("Alguem"); //Faz aquela mogica pra mudar o player certinho
         showCards();
     }
     private String getAllyURL(int whichCard){

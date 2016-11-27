@@ -43,7 +43,15 @@
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-            <Button fx:id="deck_P1" onMouseClicked="#setDone" layoutX="637.0" layoutY="359.0" prefHeight="183.0" prefWidth="128.0" text="Deck" />
+
+            <Button fx:id="passaJogada" onMouseClicked="#setDone" layoutX="637.0" layoutY="359.0" prefHeight="95.0" prefWidth="128.0" text="Passar a Jogada" />
+
+            <Label fx:id="restacartas" alignment="CENTER" contentDisplay="CENTER" layoutX="637.0" layoutY="450.0" prefHeight="95.0" prefWidth="128.0" text="Restam X cartas" textAlignment="CENTER" textFill="WHITE">
+              <font>
+                <Font size="13.0" />
+              </font>
+            </Label>
+
             <ImageView fx:id="A0" onMouseClicked="#clickedAllyField" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="165.0" preserveRatio="true">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
