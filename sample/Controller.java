@@ -30,8 +30,12 @@ public class Controller implements Initializable{
     public ImageView A0, A1, A2, A3, A4, A5;
     @FXML
     public ImageView E0, E1, E2, E3, E4, E5;
+
     @FXML
-    public Label vida, mana;
+    public ImageView handBG, enemyImage;
+
+    @FXML
+    public Label vida, mana, enemyLife;
 
     @Override
     public void initialize(java.net.URL arg0, ResourceBundle arg1){
