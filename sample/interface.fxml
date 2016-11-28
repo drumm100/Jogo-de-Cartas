@@ -1,130 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tab" prefHeight="585.0" prefWidth="815.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
-  <tabs>
-    <Tab fx:id="tab_P1" text="Player 1">
-      <content>
-        <AnchorPane id="content_P1" prefHeight="554.0" prefWidth="856.0">
-          <children>
-            <ImageView fx:id="bg_P1" fitHeight="325.0" fitWidth="872.0" layoutX="-26.0" layoutY="0.0" preserveRatio="true">
-              <image>
-                <Image url="@../cartas/caixaBG.jpg" />
-              </image>
-            </ImageView>
-            <Rectangle fill="BLUE" height="199.0" layoutX="47.0" layoutY="349.0" opacity="0.5" width="724.0" />
-            <ImageView fx:id="H0" fitHeight="183.0" fitWidth="128.0" layoutX="58.0" layoutY="359.0" onMouseClicked="#clickedHand">
-              <image>
-                <Image url="@../cartas/monstro128.jpg"/>
-              </image>
-            </ImageView>
-            <ImageView fx:id="H1" fitHeight="183.0" fitWidth="128.0" layoutX="206.0" layoutY="359.0" onMouseClicked="#clickedHand">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="H2" fitHeight="183.0" fitWidth="128.0" layoutX="354.0" layoutY="359.0" onMouseClicked="#clickedHand">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-
-            <Button fx:id="passaJogada" onMouseClicked="#setDone" layoutX="637.0" layoutY="359.0" prefHeight="95.0" prefWidth="128.0" text="Passar a Jogada" />
-
-            <Label fx:id="restacartas" alignment="CENTER" contentDisplay="CENTER" layoutX="637.0" layoutY="450.0" prefHeight="95.0" prefWidth="128.0" text="Restam X cartas" textAlignment="CENTER" textFill="WHITE">
-              <font>
-                <Font size="13.0" />
-              </font>
-            </Label>
-
-            <ImageView fx:id="A0" onMouseClicked="#clickedAllyField" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="165.0" preserveRatio="true">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="E0" onMouseClicked="#clickedEnemyField" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="40.0" preserveRatio="true" rotate="180.0">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="A1" onMouseClicked="#clickedAllyField" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="165.0" preserveRatio="true">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="E1" onMouseClicked="#clickedEnemyField" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="40.0" preserveRatio="true" rotate="180.0">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="A2" onMouseClicked="#clickedAllyField" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="A3" onMouseClicked="#clickedAllyField" fitHeight="120.0" fitWidth="84.0" layoutX="409.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="A4" onMouseClicked="#clickedAllyField" fitHeight="120.0" fitWidth="84.0" layoutX="499.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="A5" onMouseClicked="#clickedAllyField" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="E2" onMouseClicked="#clickedEnemyField" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="E3" onMouseClicked="#clickedEnemyField" fitHeight="120.0" fitWidth="84.0" layoutX="410.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="E4" onMouseClicked="#clickedEnemyField" fitHeight="120.0" fitWidth="84.0" layoutX="499.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <ImageView fx:id="E5" onMouseClicked="#clickedEnemyField" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-              <image>
-                <Image url="@../cartas/monstro128.jpg" />
-              </image>
-            </ImageView>
-            <Label fx:id="mana" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="201.0" prefHeight="95.0" prefWidth="76.0" text="20" textAlignment="CENTER" textFill="WHITE">
-              <font>
-                <Font size="50.0" fx:id="x1" />
-              </font>
-            </Label>
-            <Label fx:id="vida" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="720.0" layoutY="210.0" prefHeight="95.0" prefWidth="76.0" text="10" textAlignment="CENTER" textFill="WHITE" />
-          </children>
-        </AnchorPane>
-      </content>
-    </Tab>
-  </tabs>
-</TabPane>
-    <!--
+<!--
     <Tab fx:id="tab_P2" text="Player 2">
       <content>
         <AnchorPane id="content_P1">
@@ -218,3 +103,126 @@
     </Tab>
   </tabs>
 </TabPane> -->
+
+<TabPane fx:id="tab" prefHeight="700.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <tabs>
+    <Tab fx:id="tab_P1" text="Player 1">
+      <content>
+        <AnchorPane id="content_P1" prefHeight="554.0" prefWidth="856.0">
+          <children>
+                  <ImageView fx:id="handBG" fitHeight="199.0" fitWidth="762.0" layoutX="47.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../cartas/maoPano.png" />
+                     </image>
+                  </ImageView>
+            <ImageView fx:id="bg_P1" fitHeight="325.0" fitWidth="872.0" layoutX="-26.0" layoutY="123.0" preserveRatio="true">
+              <image>
+                <Image url="@../cartas/caixaBG.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="H0" fitHeight="183.0" fitWidth="128.0" layoutX="58.0" layoutY="482.0" onMouseClicked="#clickedHand">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="H1" fitHeight="183.0" fitWidth="128.0" layoutX="206.0" layoutY="482.0" onMouseClicked="#clickedHand">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="H2" fitHeight="183.0" fitWidth="128.0" layoutX="354.0" layoutY="482.0" onMouseClicked="#clickedHand">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+
+            <Button fx:id="passaJogada" layoutX="637.0" layoutY="507.0" onMouseClicked="#setDone" prefHeight="95.0" prefWidth="128.0" text="Passar a Jogada" />
+
+            <Label fx:id="restacartas" alignment="CENTER" contentDisplay="CENTER" layoutX="637.0" layoutY="590.0" prefHeight="95.0" prefWidth="128.0" text="Restam X cartas" textAlignment="CENTER">
+              <font>
+                <Font size="13.0" />
+              </font>
+            </Label>
+
+            <ImageView fx:id="A0" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="288.0" onMouseClicked="#clickedAllyField" preserveRatio="true">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="E0" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" preserveRatio="true" rotate="180.0">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="A1" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="288.0" onMouseClicked="#clickedAllyField" preserveRatio="true">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="E1" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" preserveRatio="true" rotate="180.0">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="A2" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="288.0" onMouseClicked="#clickedAllyField" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="A3" fitHeight="120.0" fitWidth="84.0" layoutX="409.0" layoutY="288.0" onMouseClicked="#clickedAllyField" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="A4" fitHeight="120.0" fitWidth="84.0" layoutX="499.0" layoutY="288.0" onMouseClicked="#clickedAllyField" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="A5" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="288.0" onMouseClicked="#clickedAllyField" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="E2" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="E3" fitHeight="120.0" fitWidth="84.0" layoutX="410.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="E4" fitHeight="120.0" fitWidth="84.0" layoutX="499.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="E5" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+              <image>
+                <Image url="@../cartas/monstro128.jpg" />
+              </image>
+            </ImageView>
+            <Label fx:id="mana" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="324.0" prefHeight="95.0" prefWidth="76.0" text="20" textAlignment="CENTER" textFill="WHITE">
+              <font>
+                <Font size="50.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label fx:id="vida" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="720.0" layoutY="333.0" prefHeight="95.0" prefWidth="76.0" text="10" textAlignment="CENTER" textFill="WHITE" />
+                  <ImageView fx:id="enemyImage" fitHeight="187.0" fitWidth="161.0" layoutX="324.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../cartas/jogador1ComVida.png" />
+                     </image></ImageView>
+                  <Label fx:id="enemyLife" alignment="CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="135.0" prefHeight="34.0" prefWidth="32.0" text="0" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="363.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true" />
+          </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
