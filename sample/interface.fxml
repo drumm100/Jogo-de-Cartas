@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
-
 <!--
     <Tab fx:id="tab_P2" text="Player 2">
       <content>
@@ -104,17 +108,17 @@
   </tabs>
 </TabPane> -->
 
-<TabPane fx:id="tab" prefHeight="700.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<TabPane fx:id="tab" prefHeight="700.0" prefWidth="815.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
   <tabs>
     <Tab fx:id="tab_P1" text="Player 1">
       <content>
         <AnchorPane id="content_P1" prefHeight="554.0" prefWidth="856.0">
           <children>
-            <ImageView fx:id="handBG" fitHeight="199.0" fitWidth="762.0" layoutX="47.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true">
-                 <image>
-                    <Image url="@../cartas/maoPano.png" />
-                 </image>
-              </ImageView>
+            <ImageView fx:id="handBG" fitHeight="224.0124251468327" fitWidth="815.0" layoutX="0.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" visible="true">
+              <image>
+                <Image url="@../cartas/maoPano.png" />
+              </image>
+            </ImageView>
             <ImageView fx:id="bg_P1" fitHeight="325.0" fitWidth="872.0" layoutX="-26.0" layoutY="123.0" preserveRatio="true">
               <image>
                 <Image url="@../cartas/caixaBG.jpg" />
@@ -135,15 +139,17 @@
                 <Image url="@../cartas/monstro128.jpg" />
               </image>
             </ImageView>
-
-            <Button fx:id="passaJogada" layoutX="637.0" layoutY="507.0" onMouseClicked="#setDone" prefHeight="95.0" prefWidth="128.0" text="Passar a Jogada" />
-
-            <Label fx:id="restacartas" alignment="CENTER" contentDisplay="CENTER" layoutX="637.0" layoutY="590.0" prefHeight="95.0" prefWidth="128.0" text="Restam X cartas" textAlignment="CENTER">
+            <ImageView disable="false" fitHeight="175.0" fitWidth="140.0" focusTraversable="true" layoutX="569.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../cartas/botão.png" />
+              </image>
+            </ImageView>
+            <Button fx:id="passaJogada" alignment="CENTER" blendMode="SRC_OVER" cache="true" cancelButton="false" contentDisplay="CENTER" defaultButton="false" depthTest="DISABLE" disable="false" focusTraversable="true" layoutX="578.0" layoutY="579.0" mnemonicParsing="true" onMouseClicked="#setDone" opacity="1.0" prefHeight="35.0" prefWidth="104.0" text="Passar a Jogada" textAlignment="CENTER" textOverrun="CLIP" underline="false" visible="true" wrapText="false" />
+            <Label fx:id="restacartas" alignment="CENTER" contentDisplay="CENTER" layoutX="692.0" layoutY="569.0" prefHeight="31.0" prefWidth="116.0" text="Restam X cartas" textAlignment="CENTER" textFill="BLACK" wrapText="false">
               <font>
                 <Font size="13.0" />
               </font>
             </Label>
-
             <ImageView fx:id="A0" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="288.0" onMouseClicked="#clickedAllyField" preserveRatio="true">
               <image>
                 <Image url="@../cartas/monstro128.jpg" />
@@ -210,17 +216,17 @@
               </font>
             </Label>
             <Label fx:id="vida" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="720.0" layoutY="333.0" prefHeight="95.0" prefWidth="76.0" text="10" textAlignment="CENTER" textFill="WHITE" />
-
             <ImageView fx:id="enemyImage" fitHeight="187.0" fitWidth="161.0" layoutX="324.0" layoutY="-8.0" onMouseClicked="#" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../cartas/jogador1ComVida.png" />
-               </image></ImageView>
-           <Label fx:id="enemyLife" alignment="CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="135.0" prefHeight="34.0" prefWidth="32.0" text="0" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+              <image>
+                <Image url="@../cartas/jogador1ComVida.png" />
+              </image>
+            </ImageView>
+            <Label fx:id="enemyLife" alignment="CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="135.0" prefHeight="34.0" prefWidth="32.0" text="0" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
               <font>
-                 <Font size="26.0" />
+                <Font size="26.0" />
               </font>
-           </Label>
-
+            </Label>
+            <Label layoutX="7.0" layoutY="101.0" prefHeight="21.0" prefWidth="305.0" text="Alunos: Andrius Lima, Bruno Wide e Marcelo Drumm" />
           </children>
         </AnchorPane>
       </content>
