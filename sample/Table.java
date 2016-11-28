@@ -6,8 +6,8 @@ public class Table{
     private Player player2;
 
     private Table(){
-        player1 = new Player("player1");
-        player2 = new Player("player2");
+        player1 = new Player("player1", "cartas/jogador1ComVida.png");
+        player2 = new Player("player2", "cartas/jogador2ComVida.png");
     }
     public static Table getInstance(){return instance;}
     public Player player(int player){ return ( player == 1 ? player1 : player2 );}

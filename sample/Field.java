@@ -8,7 +8,7 @@ public class Field{
     private Card selected;
 
     public Field(){
-        MAX = 5;
+        MAX = 6;
         cards = new ArrayList<Card>();
         selected = null;
     }
@@ -36,6 +36,7 @@ public class Field{
     public Card remove(int card){
         return cards.remove(card);
     }
+    
     //@ ensures size() == \old(size()-1);
     public boolean remove(Card card){
         return cards.remove(card);
@@ -54,7 +55,7 @@ public class Field{
     public Card getSelected(){return selected;}
     public int size(){return cards.size();}
     public int MAX(){return MAX;}
-
+    public ArrayList<Card> getCards(){return cards;}
     //set
 
     //@ requires hasCard(i);

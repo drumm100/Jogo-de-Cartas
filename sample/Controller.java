@@ -30,24 +30,31 @@ public class Controller implements Initializable{
     public ImageView A0, A1, A2, A3, A4, A5;
     @FXML
     public ImageView E0, E1, E2, E3, E4, E5;
-
     @FXML
-    public ImageView handBG, enemyImage;
-
+    public ImageView enemyImage;
     @FXML
     public Label vida, mana, enemyLife;
 
     @Override
     public void initialize(java.net.URL arg0, ResourceBundle arg1){
+        enemyImage.setImage( Game.getInstance().getEnemyPlayer().getImage() );
+        enemyLife.setText( Integer.toString(Game.getInstance().getEnemyPlayer().HP()) );
+        
         vida.setText( Integer.toString(Game.getInstance().getPlayer().HP()) );
         mana.setText( Integer.toString(Game.getInstance().getPlayer().getMana()) );
 
         H0.setImage( Game.getInstance().getPlayer().hand().card(0).getImage() );
         H1.setImage( Game.getInstance().getPlayer().hand().card(1).getImage() );
         H2.setImage( Game.getInstance().getPlayer().hand().card(2).getImage() );
+        restaCartas.setText("Restam " + Game.getInstance().getPlayer().deck().size() +" cartas");
     }
 
     public void showCards(){
+        restaCartas.setText("Restam " + (int)Game.getInstance().getPlayer().deck().size() +" cartas");
+
+        enemyImage.setImage( Game.getInstance().getEnemyPlayer().getImage() );
+        enemyLife.setText( Integer.toString(Game.getInstance().getEnemyPlayer().HP()) );
+
         vida.setText( Integer.toString(Game.getInstance().getPlayer().HP()) );
         mana.setText( Integer.toString(Game.getInstance().getPlayer().getMana()) );
 

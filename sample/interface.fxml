@@ -138,7 +138,7 @@
 
             <Button fx:id="passaJogada" layoutX="637.0" layoutY="507.0" onMouseClicked="#setDone" prefHeight="95.0" prefWidth="128.0" text="Passar a Jogada" />
 
-            <Label fx:id="restacartas" alignment="CENTER" contentDisplay="CENTER" layoutX="637.0" layoutY="590.0" prefHeight="95.0" prefWidth="128.0" text="Restam X cartas" textAlignment="CENTER">
+            <Label fx:id="restaCartas" alignment="CENTER" contentDisplay="CENTER" layoutX="637.0" layoutY="590.0" prefHeight="95.0" prefWidth="128.0" textAlignment="CENTER">
               <font>
                 <Font size="13.0" />
               </font>
@@ -211,10 +211,11 @@
             </Label>
             <Label fx:id="vida" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="720.0" layoutY="333.0" prefHeight="95.0" prefWidth="76.0" text="10" textAlignment="CENTER" textFill="WHITE" />
 
-            <ImageView fx:id="enemyImage" fitHeight="187.0" fitWidth="161.0" layoutX="324.0" layoutY="-8.0" onMouseClicked="#" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="enemyImage" fitHeight="187.0" fitWidth="161.0" layoutX="324.0" layoutY="-8.0" onMouseClicked="#clickedEnemyPlayer" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../cartas/jogador1ComVida.png" />
-               </image></ImageView>
+               </image>
+            </ImageView>
            <Label fx:id="enemyLife" alignment="CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="135.0" prefHeight="34.0" prefWidth="32.0" text="0" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
               <font>
                  <Font size="26.0" />

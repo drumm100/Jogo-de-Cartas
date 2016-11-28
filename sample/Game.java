@@ -13,15 +13,18 @@ public class Game{
 
     public void play(int wichCard){// joga a carta da mão no campo
         Card card = getPlayer().hand().card( wichCard );
-        
-        if( getPlayer().getMana() >= card.getCost() ){
-            getPlayer().hand().remove(card);
+        if(getPlayer().getMana() < card.getCost())
+            return;
 
-            if(card instanceof CharacterCard )
-                getPlayer().field().add(card);
-            else
+        if(card instanceof SpellCard){
+                getPlayer().hand().remove(card);
                 card.hit( getEnemyPlayer() );
-            
+                getPlayer().setMana( getPlayer().getMana() - card.getCost() );
+                return;
+        }
+        if(getPlayer().field().size() < 6){
+            getPlayer().hand().remove(card);
+            getPlayer().field().add(card);
             getPlayer().setMana( getPlayer().getMana() - card.getCost() );
         }
     }
