@@ -152,62 +152,62 @@
             </Label>
             <ImageView fx:id="A0" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="288.0" onMouseClicked="#clickedAllyField" preserveRatio="true">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="E0" fitHeight="120.0" fitWidth="84.0" layoutX="137.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" preserveRatio="true" rotate="180.0">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="A1" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="288.0" onMouseClicked="#clickedAllyField" preserveRatio="true">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="E1" fitHeight="120.0" fitWidth="84.0" layoutX="228.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" preserveRatio="true" rotate="180.0">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="A2" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="288.0" onMouseClicked="#clickedAllyField" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="A3" fitHeight="120.0" fitWidth="84.0" layoutX="409.0" layoutY="288.0" onMouseClicked="#clickedAllyField" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="A4" fitHeight="120.0" fitWidth="84.0" layoutX="499.0" layoutY="288.0" onMouseClicked="#clickedAllyField" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="A5" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="288.0" onMouseClicked="#clickedAllyField" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="E2" fitHeight="120.0" fitWidth="84.0" layoutX="319.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" pickOnBounds="true" preserveRatio="true" rotate="180.0">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="E3" fitHeight="120.0" fitWidth="84.0" layoutX="410.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" pickOnBounds="true" preserveRatio="true" rotate="180.0">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="E4" fitHeight="120.0" fitWidth="84.0" layoutX="499.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" pickOnBounds="true" preserveRatio="true" rotate="180.0">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <ImageView fx:id="E5" fitHeight="120.0" fitWidth="84.0" layoutX="591.0" layoutY="163.0" onMouseClicked="#clickedEnemyField" pickOnBounds="true" preserveRatio="true" rotate="180.0">
               <image>
-                <Image url="@../cartas/monstro128.jpg" />
+                  <Image url="@../cartas/invisible.png" />
               </image>
             </ImageView>
             <Label fx:id="mana" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="324.0" prefHeight="95.0" prefWidth="76.0" text="20" textAlignment="CENTER" textFill="WHITE">
