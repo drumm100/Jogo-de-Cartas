@@ -39,7 +39,7 @@ public class Controller implements Initializable{
     public void initialize(java.net.URL arg0, ResourceBundle arg1){
         enemyImage.setImage( Game.getInstance().getEnemyPlayer().getImage() );
         enemyLife.setText( Integer.toString(Game.getInstance().getEnemyPlayer().HP()) );
-        
+
         vida.setText( Integer.toString(Game.getInstance().getPlayer().HP()) );
         mana.setText( Integer.toString(Game.getInstance().getPlayer().getMana()) );
 
@@ -61,65 +61,65 @@ public class Controller implements Initializable{
         if( Game.getInstance().getPlayer().hand().hasCard(0) )
 		    H0.setImage( Game.getInstance().getPlayer().hand().card(0).getImage() );
         else
-            H0.setImage( new Image("cartas/monstro128.jpg") );
+            H0.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getPlayer().hand().hasCard(1) )
             H1.setImage( Game.getInstance().getPlayer().hand().card(1).getImage() );
         else
-            H1.setImage( new Image("cartas/monstro128.jpg") );
+            H1.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getPlayer().hand().hasCard(2) )
             H2.setImage( Game.getInstance().getPlayer().hand().card(2).getImage() );
         else
-            H2.setImage( new Image("cartas/monstro128.jpg") );
+            H2.setImage( new Image("cartas/invisible.png") );
 
         if( Game.getInstance().getPlayer().field().hasCard(0) )
             A0.setImage( new Image( getAllyURL(0) ) );
         else
-            A0.setImage( new Image("cartas/monstro128.jpg") );
+            A0.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getPlayer().field().hasCard(1) )
             A1.setImage( new Image( getAllyURL(1) ) );
         else
-            A1.setImage( new Image("cartas/monstro128.jpg") );
+            A1.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getPlayer().field().hasCard(2) )
             A2.setImage( new Image( getAllyURL(2) ) );
         else
-            A2.setImage( new Image("cartas/monstro128.jpg") );
+            A2.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getPlayer().field().hasCard(3) )
             A3.setImage( new Image( getAllyURL(3) ) );
         else
-            A3.setImage( new Image("cartas/monstro128.jpg") );
+            A3.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getPlayer().field().hasCard(4) )
             A4.setImage( new Image( getAllyURL(4) ) );
         else
-            A4.setImage( new Image("cartas/monstro128.jpg") );
+            A4.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getPlayer().field().hasCard(5) )
             A5.setImage( new Image( getAllyURL(5) ) );
         else
-            A5.setImage( new Image("cartas/monstro128.jpg") );
+            A5.setImage( new Image("cartas/invisible.png") );
 
         if( Game.getInstance().getEnemyPlayer().field().hasCard(0) )
             E0.setImage( new Image( getEnemyURL(0) ) );
         else
-            E0.setImage( new Image("cartas/monstro128.jpg") );
+            E0.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(1) )
             E1.setImage( new Image( getEnemyURL(1) ) );
         else
-            E1.setImage( new Image("cartas/monstro128.jpg") );
+            E1.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(2) )
             E2.setImage( new Image( getEnemyURL(2) ) );
         else
-            E2.setImage( new Image("cartas/monstro128.jpg") );
+            E2.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(3) )
             E3.setImage( new Image( getEnemyURL(3) ) );
         else
-            E3.setImage( new Image("cartas/monstro128.jpg") );
+            E3.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(4) )
             E4.setImage( new Image( getEnemyURL(4) ) );
         else
-            E4.setImage( new Image("cartas/monstro128.jpg") );
+            E4.setImage( new Image("cartas/invisible.png") );
         if( Game.getInstance().getEnemyPlayer().field().hasCard(5) )
             E5.setImage( new Image( getEnemyURL(5) ) );
         else
-            E5.setImage( new Image("cartas/monstro128.jpg") );
+            E5.setImage( new Image("cartas/invisible.png") );
 	}
 
     public void clickedHand(MouseEvent event){ // joga carta wichCard no campo
