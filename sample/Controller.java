@@ -15,6 +15,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.Tab;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class Controller implements Initializable{
     public TabPane tab;
@@ -156,7 +158,12 @@ public class Controller implements Initializable{
         game.attack(card, enemy );
 
         if ( game.didWin() ){
-            System.out.println("parabens por porra nenhuma, vc ganhou");
+            Alert alert;
+            alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Atencao !!");
+            alert.setHeaderText(null);
+            alert.setContentText("Fim de Jogo !!");
+            alert.showAndWait();
         }
         showCards();
     }
